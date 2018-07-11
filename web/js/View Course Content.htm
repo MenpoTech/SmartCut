@@ -1,0 +1,3744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <title>View Course Content </title>
+
+    <meta name="description" />
+
+    
+    <link rel="shortcut icon" href="https://image.swayam.gov.in/wqimgtest/data/esp/favico/default.ico?3003.0013?636537102965020042">
+
+    <link rel="apple-touch-icon image_src" href="//cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+
+    <link rel="alternate" href="https://swayam.gov.in/" hreflang="x-default" />
+
+    <meta http-equiv="X-UA-Compatible" charset="utf-8" />
+    <meta name="viewport" id="viewport" />
+    <link href="//assets.swayam.gov.in/wiziqcss/css/skin01/style_course.css?ver=3003.0013" rel="stylesheet" type="text/css" />
+    <script src="//assets.swayam.gov.in/prelogin/js/jquery-1.11.0.min.js?ver=3003.0013"></script>
+    <script src="//assets.swayam.gov.in/private/validator.js?ver=3003.0013"></script>
+    <script src="//assets.swayam.gov.in/private/custom.js?Ver=3003.0013"></script>
+
+    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+    <script src="//assets.swayam.gov.in/prelogin/js/jquery.bxslider.js?ver=3003.0013"></script>
+    
+    <script src="//assets.swayam.gov.in/wiziqcss/js/jquery.colorbox.js?ver=3003.0013"></script>
+
+    <style>
+        .image_logo {
+            padding: 10px 0;
+        }
+
+
+        .headmenu li a {
+            color: #888;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+            .headmenu li a:hover {
+                color: #f78200;
+                font-weight: normal;
+            }
+
+            .headmenu li a.active {
+                color: #f78200;
+                font-weight: normal;
+            }
+
+        .header .logo {
+            padding: 0;
+        }
+
+        .mar65 {
+            margin-right: 30px;
+        }
+    </style>
+    
+    
+</head>
+<body class="en">
+
+
+<style type="text/css">
+    
+    .btn-custm
+    {
+        padding: 0px 20px;
+    }
+
+  
+ .caret {
+    background: url(//assets.swayam.gov.in/prelogin/Images/expand-button.png?ver=3003.0013) no-repeat;
+       display: inline-block;
+    height: 16px;
+    width: 16px;
+    border:0; float:right
+}
+#langDV .btn {
+    width:360px;
+   background-color: #fff;
+    text-align:left;
+    border: 1px solid #ccc;
+   white-space:normal
+ }
+ .dropdown-menu {width:100%
+        }
+   .pad-20{padding:20px} 
+    .img-responsive {
+    height: auto;
+    max-width: 100%;
+}</style>
+
+<link href="//assets.swayam.gov.in/prelogin/CSS/testbrowser.css" rel="stylesheet" />
+<div aria-hidden="true" class="modal fade custom-modal" id="selectLanguage" tabindex="-1" role="dialog" aria-labelledby="selectLanguage" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content pad-20" style="width:400px; height:180px">
+            <div class="clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <p class="h2" style="font-size:18px; margin:0" id="exampleModalLabel">Change Language </p>
+            </div>
+
+            <div class="dropdown top20" id="langDV">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span id="dropdownSelected">English</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id="modalDropdown">
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="English(en)">English</a></li>
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="Hindi(hi)">हिंदी</a></li>
+                </ul>
+            </div>
+
+            <div class="clearfix fright top30">
+                <a href="" data-dismiss="modal" rel="nofollow" class="right10">CANCEL</a>
+                <a href="javascript:SetLanguage();">CHANGE</a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+  
+
+<style type="text/css">
+    .topmenu {
+        margin: 0;
+        padding: 0;
+    }
+
+        .topmenu li {
+            float: left;
+            margin-left: 15px;
+            padding: 5px 0;
+        }
+
+            .topmenu li:first-child {
+                margin-left: 0;
+            }
+             .topmenu li:last-child span a {
+                padding-right: 0;
+            }
+            .topmenu li a {
+                color: #888;
+                font-size: 11px;
+                border-right: solid 1px #ddd;
+                padding-right: 10px;
+                text-align: right;
+            }
+
+                .topmenu li a:hover {
+                    color: #f78200;
+                    text-decoration: none;
+                }
+
+                .topmenu li a.active {
+                    color: #f78200;
+                }
+
+    .DvRight {
+        float: right;
+    }
+
+    #dashboard-header {
+        margin-top: 0;
+    }
+
+    .learndiv {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        font-size: 11px;
+        position: absolute;
+        top: 33px;
+        right: -2px;
+        text-align: left;
+        width: 118px;
+        z-index: 999999;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        -khtml-border-radius: 4px;
+        -moz-box-shadow: 1px 3px 3px 0 rgba(204,203,202,.4);
+        -webkit-box-shadow: 1px 3px 3px 0 rgba(204,203,202,.4);
+        box-shadow: 1px 3px 3px 0 rgba(204,203,202,.4);
+    }
+
+        .learndiv ul {
+            display: block;
+            float: left;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 110px;
+        }
+
+        .learndiv .topTip {
+            width: 17px;
+            height: 9px;
+            position: absolute;
+            right: 7px;
+            top: -14px;
+        }
+
+        .learndiv li {
+            display: block;
+            float: left;
+            list-style-type: none;
+            width: 110px;
+        }
+
+            .learndiv li a:hover {
+                color: #f78200;
+            }
+
+            .learndiv li a {
+                font-size: 12px;
+                display: block;
+                color: #666;
+                text-decoration: none;
+                border: 0;
+                text-align: left;
+            }
+
+    .dv100 {
+        float: left;
+        width: 100%;
+    }
+
+    .headmenu {
+        float: left;
+    }
+
+        .headmenu li {
+            margin-left: 19px;
+            padding: 0;
+        }
+
+    .logindv {
+        float: right;
+    }
+
+        .logindv ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .logindv li {
+            float: left;
+            font-size: 11px;
+        }
+
+            .logindv li.divider {
+                margin: 0 5px;
+                float: left;
+            }
+    .user-msgs {
+    margin-top: -4px;width: 30px;
+    float: left;
+    position: absolute;
+    top: 5px;
+    right: -10px;
+}
+    .user-msgs a {
+        margin-top: 12px;
+        position: relative;
+        background: url(//assets.swayam.gov.in/prelogin/Images/icons_latest.png) 0 -129px no-repeat;
+        width: 20px;
+        height: 16px;
+        padding: 0!important;
+    }
+    .ico-msgs {
+	float:right;
+	background:#f58220;
+	z-index:101;
+	color:#fff;
+	font-size:10px;
+	font-weight:700;
+	-khtml-border-radius:8px;
+	line-height:14px;
+        text-align: center;
+
+	padding:0 4px;
+	height:15px;
+	position:absolute;
+	top:-10px;
+	left:9px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px
+}
+</style>
+
+<header id="dashboard-header" style="margin-bottom:10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-24 pad-zero">
+                        <a href="/Home"><img src="//assets.swayam.gov.in/swayam/images/swayam_logo_194_80.png" class="img-responsive swayam-logo" alt="swayam logo"></a>
+
+            </div>
+
+            <div class="col-md-20 fright">
+                <div class="dv100">
+                    <div class="DvRight">
+                        <ul class="topmenu">
+                            
+                            <li><a href="/About">ABOUT SWAYAM</a></li>
+
+                            <li><a href="/Faculty">Faculty</a> </li>
+                            <li><a href="/Institutions">Institutions</a> </li>
+                            <li onclick="javascript: ShowLearningPathDropdown(event);">
+                                <a href="javascript:void(0);" style="border:0">Learning Path</a>
+                                <span>   <a href="javascript:void(0);"><img src="//assets.swayam.gov.in/prelogin/images/private/arrow.png" /></a></span>
+                                <nav id="reg-user-hide" class="learndiv" style="display: none;">
+                                    <ul>
+                                        <span class="topTip">
+                                            <img src="//assets.swayam.gov.in/prelogin/Images/top_tooltip.jpg">
+                                        </span>
+                                        <li><a href="/school">School</a></li>
+                                        <li><a href="/Certificate">Certificate</a></li>
+                                        <li><a href="/Diploma">Diploma</a></li>
+                                        <li><a href="/UnderGraduate">Under Graduate</a></li>
+                                        <li><a href="/PostGraduate">Post Graduate</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dv100">
+                    <div class="col-md-5 fright" style="padding-right:0">
+                        <div class="text-right-md text-center-xs text-center-sm">
+                            <ul class="list-inline user-account-list">
+
+                                <li>
+                                    <ul class="nav">
+                                        <li class="clearfix" uib-dropdown="" dropdown-append-to-body="" style="width: 165px; ">
+                                            <a id="btn-append-to-body" href="javascript:void();" class="dropdown-toggle clearfix" uib-dropdown-toggle="">
+                                                
+                                                <img src="https://image.swayam.gov.in/wqimgtest/ut/ust/no-profile-picture_small.jpg" class="img-responsive pull-left" alt="">
+                                                <span class="pull-left left5" title="sdivya">
+sdivya                                                    <br>
+                                                </span>
+                                                 <i class="fa fa-angle-down" style="font-size: 15px;margin-left: 0px;" onClick="javascript: ShowHeaderDropdown(event);"></i>
+
+                                            </a>
+
+                                            <ul class="dropdown-menu1" uib-dropdown-menu="" role="menu" aria-labelledby="btn-append-to-body" style="list-style-type:none">
+                                                <li><a href="javascript:void();" onClick="javascript: SelectLanguageDropdown();">Change Language</a></li>
+                                                    <li><a href="/UpdateProfile"><i class="icon-off"></i>Update Profile</a></li>
+                                                <li><a href="/account/signout" onclick="OnSignOut();"><i class="icon-off"></i>Logout</a></li>
+                                            </ul>
+                                        </li>
+                                            <li class="user-msgs" style="position: absolute">
+                                                <a id="hlnkInbox" href="/inbox/Inbox.aspx" class="wizInbox1">
+                                                </a>
+                                            </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-19 col-xs-24 top10 fright" style="position:relative">
+
+
+<style>
+    .ui-helper-hidden-accessible {
+        background: #ffffff none repeat scroll 0 0;
+        padding: 0 15px;
+        position: absolute;
+        width: auto;
+    }
+
+    .ui-autocomplete {
+        cursor: default;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    .ui-menu {
+        display: block;
+        list-style: outside none none;
+        margin: 0;
+        outline: 0 none;
+        padding: 0;
+    }
+
+    .ui-widget {
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 1em;
+    }
+
+    .ui-widget-content {
+        background: #ffffff none repeat scroll 0 0;
+        border: 1px solid #dddddd;
+        color: #333333;
+    }
+
+    .ui-autocomplete {
+        background: #ffffff none repeat scroll 0 0;
+        padding: 10px;
+		z-index: 10000;
+    }
+
+    .ui-widget.ui-widget-content {
+        border: 1px solid #c5c5c5;
+    }
+
+    .ui-menu .ui-menu-item {
+        cursor: pointer;
+        margin: 0;
+    }
+
+    .ui-widget-content a {
+        color: #333333;
+    }
+
+    .ui-menu .ui-menu-item-wrapper {
+        padding: 3px 1em 3px 0.4em;
+        position: relative;
+        font-size: 12px;
+    }
+    .Autosearchbtn {
+            height: 26px;
+            width: 26px;
+            display: inline-block;
+            float: right;
+            background-image: url('//assets.swayam.gov.in/swayam/images/search_pic.png');
+            border: none;
+            position: absolute;
+            top:-4px;
+            right:10px;
+            z-index: 2;
+            cursor: pointer;
+        }
+    .headmenu {
+    float: right; margin-top:-2px
+}
+</style>
+
+<div class="col-md-3 fright" style="float:right;">
+    <!--style="width: 19.5em;" -->
+    <input id="searchBox" type="search" class="search-bar" style="width: 0px;float:right; margin-top:-7px; padding:5px 69px 5px 8px; font-size:14px; -webkit-border-radius: 5px;  -moz-border-radius: 5px; border-radius: 5px; border: solid 1px #ccc; background-color: #fff;" placeholder="Search by course name, subject, faculty or institution">
+    <a id="btnReset" href="javascript:void(0);" class="clr-search" style="position: absolute;right:50px;width: 30px;float: left;
+        padding: 0px 5px;top:-1px;height: 24px;z-index: 9; display: none;">Clear</a>
+        <span class="Autosearchbtn" id="btnSearch">
+        </span>
+    </div>
+    <script>
+        // $.noConflict();
+        jQuery(document).ready(function ($) {
+
+            $.fn.focusTextToEnd = function () {
+                this.focus();
+                var $thisVal = this.val();
+                this.val('').val($thisVal);
+                return this;
+            }
+
+
+            // $('#searchBox').focusTextToEnd();
+
+
+            var inputData = "";
+
+            $('#searchBox').val(getParameterByName("keyword"));
+
+            hideSearchBox($('#searchBox'));
+
+            if ($('#searchBox').val().trim().length > 0) {
+                hideSearchBox($('#searchBox'));
+            }
+
+            $('html').on('click', function (event) {
+                var target = $(event.target);
+                if(event.target.id=="lisearch"){
+                    Search($('#searchBox').val());
+                }
+                if (target.hasClass('searchBoxItem') || (target.attr('role') == 'presentation')) {
+                    return;
+                } else {
+                    hideSearchBox($('#searchBox'));
+                }
+            });
+
+            $('#btnSearch').on("click", function (event) {
+                var searchBox = $('#searchBox');
+                if ($(searchBox).val().trim().length == 0 || $(searchBox).hasClass('hideSb')) {
+                    showSearchBox(searchBox);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+                else if ($(searchBox).val().trim().length > 0) {
+                    window.location = '/courses/public?keyword=' + encodeURIComponent($('#searchBox').val());
+                    event.stopPropagation();
+                }
+            });
+
+            $("#searchBox").autocomplete({
+                source: function (inputData, response) {
+                    var data = { "Query": inputData.term }
+                    $.ajax({
+                        url: "/search/GetSuggestResult",
+                        type: 'POST',
+                        data: JSON.stringify(data),
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8',
+                        error: function (xhr) {
+                            console.log('Error: ' + xhr.statusText);
+                        },
+                        success: function (result) {
+                            response(JSON.parse(result.success));
+                        }
+                    });
+                },
+                minLength: 1,
+                messages: {
+                    noResults: '',
+                    results: function () { }
+                }
+            }).data("ui-autocomplete")._renderItem = function (ul, item) {
+               
+                $(ul).css({'z-index':'1000'});
+                return $("<li onclick=Search(verification); id='lisearch';>")
+                    .append("<a id='" + item.label + "' class='searchBoxItem' data-item='" + item.label + "' onclick='Search(this.id);'>" + item.label + "</a>")
+                    .appendTo(ul);
+            };
+
+            $('#searchBox').on('click', function (event) {
+                event.stopPropagation();
+                event.preventDefault();
+            });
+
+            $('#searchBox').on('input', function (e) {
+                inputData = $(this).val();
+            });
+
+            $('#searchBox').keyup(function (event) {
+                if ($('#searchBox').val().trim().length > 0) {
+                    $('#btnReset').show();
+                } else {
+                    $('#btnReset').hide();
+                    if (window.hadTextOnLoad) {
+                        triggerSearch();
+                        window.hadTextOnLoad = false;
+                    }
+                }
+            });
+
+            
+
+            $('#searchBox').keypress(function (event) {
+                var code = (event.keyCode ? event.keyCode : event.which);
+
+                if (code == 13) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    if ($('#searchBox').val().trim().length > 0) {
+                        window.location = '/courses/public?keyword=' + encodeURIComponent($('#searchBox').val());
+                    }
+                }
+            });
+
+            $('#btnReset').on('click', function (event) {
+                $('#searchBox').val('');
+                $('#btnReset').hide();
+               
+            });
+
+          
+           
+        });
+        function showSearchBox(e) {
+            jQuery(e).focus().css('width', '700px').css('border', 'solid 1px #ccc').addClass('showSb').removeClass('hideSb');
+            if(170952 == 0)
+            {
+                jQuery(e).css('width', '390px')
+            }
+            if (jQuery(e).val().trim().length > 0)
+                jQuery('#btnReset').show();
+        }
+        function hideSearchBox(e) {
+            jQuery(e).css('width', '0px').css('border', '0px').addClass('hideSb').removeClass('showSb');
+            jQuery('#btnReset').hide();
+        }
+
+        function removeParameter(url, parameter) {
+            var urlparts = url.split('?');
+
+            if (urlparts.length >= 2) {
+                var urlBase = urlparts.shift(); //get first part, and remove from array
+                var queryString = urlparts.join("?"); //join it back up
+
+                var prefix = encodeURIComponent(parameter) + '=';
+                var pars = queryString.split(/[&;]/g);
+                for (var i = pars.length; i-- > 0;)               //reverse iteration as may be destructive
+                    if (pars[i].lastIndexOf(prefix, 0) !== -1)   //idiom for string.startsWith
+                        pars.splice(i, 1);
+                url = urlBase + '?' + pars.join('&');
+            }
+            return url;
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        function Search(id) {
+            window.location = '/courses/public?keyword=' + encodeURIComponent(id);
+        }
+    </script>
+                            <ul class="headmenu" data-link="Courses" data-active="MyStuff">
+
+                                <li>
+                                    <a class="home" href="/">HOME</a>
+                                </li>
+
+                                <li>
+                                    <a class="catalog" href="/courses/public">ALL COURSES</a>
+                                </li>
+
+                                <li>
+                                    <a class="dashboard" href="/dashboard">DASHBOARD</a>
+                                </li>
+                                <li>
+                                    <a class="mystuff" href="/courses/4483-research-writing/index">MY COURSES</a>
+                                </li>
+                                <li>
+                                    <a class="calendar" href="/dashboard/calendar">MY CALENDAR</a>
+                                </li>
+
+                                <li>
+                                    <a class="myprogress" href="/courses/4483-research-writing/index#progress">MY PROGRESS</a>
+                                </li>
+
+                            </ul>
+                    </div>
+                </div>
+                    <div style="margin-top: 15px;float: right;width: 20%;margin-bottom: 4px;"><span class="logindv" href="#" style="font-weight: bold;font-size:smaller;margin-top: -18px;"> (Logged in as Student)</span> </div>
+                <div class="dv100" title="10/01/2018 14:44 | Indian Standard Time">
+                    <ul class="logindv">
+                        <li><strong>Last Login:&nbsp;</strong></li>
+                        <li>10/01/2018 14:44</li>
+                        <li>&nbsp;(IST) </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<div aria-hidden="true" class="modal fade custom-modal" id="selectLanguage" tabindex="-1" role="dialog" aria-labelledby="selectLanguage" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content pad-20" style="width:400px; height:180px">
+            <div class="clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <p class="h2" style="font-size:18px; margin:0" id="exampleModalLabel">Change Language </p>
+            </div>
+
+            <div class="dropdown top20" id="langDV">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span id="dropdownSelected">English</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id="modalDropdown">
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="en">English</a></li>
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="hi">हिंदी</a></li>
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="ta">தமிழ்</a></li>
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="te">తెలుగు</a></li>
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="bn">বাঙালি</a></li>
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="mr">मराठी</a></li>
+                    <li><a onclick="javascript: SelectMenu(this);" data-val="gu">ગુજારી</a></li>
+                </ul>
+            </div>
+
+            <div class="clearfix fright top30">
+                <a href="" data-dismiss="modal" rel="nofollow" class="right10">CANCEL</a>
+                <a href="javascript:SetLanguage();">CHANGE</a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+
+    function ShowLearningPathDropdown(event) {
+        event.stopPropagation();
+        if (jQuery("#reg-user-hide").css('display') == 'block') {
+            jQuery('#reg-user-hide').css("display", "none");
+        }
+        else {
+            jQuery('#reg-user-hide').css("display", "block");
+        }
+        jQuery('.dropdown-menu1').css("display", "none");
+    }
+
+    function ShowHeaderDropdown(event) {
+        event.stopPropagation();
+        if (jQuery(".dropdown-menu1").css('display') == 'block') {
+            jQuery('.dropdown-menu1').css("display", "none");
+        }
+        else {
+            jQuery('.dropdown-menu1').css("display", "block");
+        }
+        jQuery('#reg-user-hide').css("display", "none");
+    }
+
+    jQuery('html').click(function () {
+        jQuery('.dropdown-menu1').css("display", "none");
+        jQuery('#reg-user-hide').css("display", "none");
+    });
+
+
+    $(document).ready(function () {
+        $('#selectLanguage').modal('hide');
+        $('#selectLanguage').css('display', 'none');
+        $('#selectLanguage').hide();
+    });
+    function SelectLanguageDropdown() {
+        hideDropdown();
+        $('#selectLanguage').modal({
+            keyboard: true
+        }, 'show');
+    }
+
+    function hideDropdown() {
+        $('#dropdownLinks').hide();
+    }
+
+    function SelectMenu(res) {
+        if ($(res).text() != "") {
+            $('#dropdownSelected').text($(res).text());
+            $('#dropdownSelected').val($(res).data('val'));
+        }
+    }
+
+    function SetLanguage() {
+
+        var currentUrl = window.location.href;
+        $.ajax({
+            type: 'GET',
+            url: "/languagechange/setlanguage",
+            data: { language: $('#dropdownSelected').val().trim(), currentUrl: currentUrl },
+            cache: false,
+            success: function (response) {
+                $(document).ready(function () {
+                    $('#selectLanguage').modal("hide");
+                });
+                $('#dropdownSelected').val(response.cultureName);
+                window.location.reload(true);
+            },
+            error: function (err) {
+            }
+        });
+    }
+    function OnSignOut() {
+        //$("#page-loading").css("display", "block");
+        $("body").append("<div id='page-loading' style='position:fixed;top:0;left:0;z-index:9999;width:100%;height:100%;background:#fff;text-align:center;padding-top:15%;>  <img style='display:block; margin:0 auto;' src='/images/newLoading.gif'> </div>");
+
+    }
+</script>
+   
+    <script src="//assets.swayam.gov.in/prelogin/js/modernizr.custom.js"></script>
+    <script src="//assets.swayam.gov.in/swayam/js/jquerycookie.js"></script>
+
+    <script>
+        new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
+            type: 'cover'
+        });
+        $(document).ready(function () {
+            if (navigator.platform != "Win32")
+                $(this).closest("#dvNotification").hide();
+        });
+
+        $(document).on("click", ".hd-close", function () {
+            $(this).closest("#dvNotification").hide();
+            $.ajax({
+                url: '/ClassList/UpdatePichStatus',
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                success: function (response) {
+                },
+                error: function () {
+                    alert("Network issue, please try after refreshing screen.");
+                }
+            })
+        });
+        function hideDropdown() {
+            jQuery('#dropdownLinks').hide();
+        }
+        function hideHeaderDropdown(event) {
+            event.stopPropagation();
+            if (jQuery(".dropdown-menu1").css('display') == 'block')
+            {
+                jQuery('.dropdown-menu1').css("display", "none");
+            }
+       else {
+                jQuery('.dropdown-menu1').css("display", "block");
+            }
+        }
+     
+    </script>
+<script type="text/javascript">
+    jQuery('html').click(function () {
+            jQuery('.dropdown-menu1').css("display", "none");
+    });
+    
+</script>
+    <script type="text/javascript">
+        
+        jQuery(document).ready(function () {
+            jQuery('#selectLanguage').modal('hide');
+            jQuery('#selectLanguage').css('display', 'none');
+            jQuery('#selectLanguage').hide();
+        });
+        function SelectLanguageDropdown() {
+            hideDropdown();
+            jQuery('#selectLanguage').modal({
+                keyboard: true
+            }, 'show');
+        }
+
+        function SelectMenu(res) {
+            if (jQuery(res).text() != "") {
+                jQuery('#dropdownSelected').text(jQuery(res).text());
+                jQuery('#dropdownSelected').val(jQuery(res).data('val'));
+            }
+        }
+        function SetLanguage() {           
+
+            var currentUrl = window.location.href;
+            jQuery.ajax({
+                type: 'GET',
+                url: "/languagechange/setlanguage",
+                data: { language: jQuery('#dropdownSelected').val().trim(), currentUrl: currentUrl },
+                cache: false,
+                success: function (response) {
+                    jQuery(document).ready(function () {
+                        jQuery('#selectLanguage').modal("hide");
+                    });
+                    jQuery('#dropdownSelected').val(response.cultureName);                    
+                    window.location.reload(true);
+                },
+                error: function (err) {                    
+                }
+            });
+        }
+    </script>
+
+    <div>
+        
+
+
+<style type="text/css">
+    .image_logo{text-align:left}
+    .drop-user-links {right: 73px;}
+    .bx-viewport {
+        min-height: 0px;
+    }
+    .modal-dialog .popup-delete {
+    width: 450px;
+}
+    .ico-deletefail {
+    background: rgba(0, 0, 0, 0) url("//assets.swayam.gov.in/wiziqcss/css/skin01/images/settings-sprite1.png") no-repeat scroll -60px -54px;
+    height: 41px;
+    width: 49px;
+}
+    .primary-btn{padding:6px 15px}
+
+    .tooltip2
+    {
+        background-color: #fff;
+        color: #333;
+        font-size: 11px;
+        float: left;
+        width: 158px;
+        border: solid 1px #ccc;
+        position: absolute;
+      
+        text-transform:lowercase;
+        box-shadow:3px 3px 3px #ccc; border-radius:3px;
+        -moz-border-radius:3px; -webkit-border-radius:3px
+    }
+
+    .tooltip2 .pad
+    {
+        padding: 6px 5px 0px 5px;
+    }
+
+    .popupdv
+    {
+        position: absolute;
+        left: -11px;
+        top: 15px;
+    }
+    .viewer-tab .nav-tabs > li.active {margin-top:47px}
+     .viewer-tab .tab-prev, .viewer-tab .tab-next{top:60px}
+    .ico-base {
+    background: url(//assets.swayam.gov.in/wiziqcss/css/skin01/images/Addcnticon.png) right top no-repeat rgba(0,0,0,0);
+    float: left;
+    height: 20px;
+    text-align: center;
+    width: 22px;
+}.link-ico,.ico-readinglist {
+    background-position: 1px -226px; 
+    height: 16px;
+}
+.viewer-tab .nav-tabs > li.active > a, .viewer-tab .nav-tabs > li.active > a:hover, .viewer-tab .nav-tabs > li.active > a:focus{padding:6px 13px}
+.info-div{background:url(//assets.swayam.gov.in/wiziqcss/css/skin01/images/info-icon-gray.jpg) no-repeat; float:left; width:20px; height:20px}
+
+    ico-video-n-white{background-position:0 -1858px;width:25px;height:16px}
+    .ico-assignment-white{background-position:0 -1987px;width:25px;height:22px}
+    .ico-readinglist-white{background-position:0 -2600px;width:23px;height:12px}
+    .sprite{background:url('//assets.swayam.gov.in/wiziqcss/css/skin01/images/spritetest.png') no-repeat top left;width:16px;height:16px}.sprite.arrows{background-position:0 0;}
+    .viewer-tab .nav-tabs{border-bottom: none; padding: 0}.viewer-tab .nav-tabs > li.active {
+     margin-top: 0px; 
+}
+.viewer-tab .nav-tabs > li > a {
+    background: #f2f2f2;
+    text-transform: none;
+    color: #007fc5;
+    font-weight: normal;
+	border-left: 0px solid #d8d8d8;	border-right: 1px solid #d8d8d8;
+    
+    padding: 7px 12px 6px;
+    border-radius: 0; margin: 0 -1px 0 0;
+    text-align: left;
+}
+
+.viewer-tab .nav-tabs > li.active > a, .viewer-tab .nav-tabs > li.active > a:hover, .viewer-tab .nav-tabs > li.active > a:focus{
+    background: #fff;
+    color: #333333;
+    border: 1px solid #d8d8d8;
+    border-left: 2px solid #f58220; border-right:none;
+    padding: 6px 13px;}
+	
+.viewer-tab .nav-tabs>li>a:hover {
+    background: #fff8eb!important;
+   
+}
+
+.nav-tabs > li{float:left;margin-bottom:-1px; width:100%; border-right: 1px solid #d8d8d8;}
+.nav-tabs > li > a{margin-right:2px;line-height:1.42857143;border-radius:4px 4px 0 0}
+.nav-tabs > li > a:hover{border-color:#eeeeee #eeeeee #dddddd}
+.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover,.nav-tabs > li.active > a:focus{color:#555555;background-color:#ffffff;border:1px solid #dddddd;border-bottom-color:transparent;cursor:default}
+    .section-eillips{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script type="text/javascript">var isIE = (navigator.appVersion.indexOf("MSIE") != -1) ? true : false; var isWin = (navigator.appVersion.toLowerCase().indexOf("win") != -1) ? true : false; var isOpera = (navigator.userAgent.indexOf("Opera") != -1) ? true : false; function ControlVersion() { var version; var axo; var e; try { axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7"); version = axo.GetVariable("$version") } catch (e) { } if (!version) { try { axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6"); version = "WIN 6,0,21,0"; axo.AllowScriptAccess = "always"; version = axo.GetVariable("$version") } catch (e) { } } if (!version) { try { axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.3"); version = axo.GetVariable("$version") } catch (e) { } } if (!version) { try { axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.3"); version = "WIN 3,0,18,0" } catch (e) { } } if (!version) { try { axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash"); version = "WIN 2,0,0,11" } catch (e) { version = -1 } } return version } function GetSwfVer() { var flashVer = -1; if (navigator.plugins != null && navigator.plugins.length > 0) { if (navigator.plugins["Shockwave Flash 2.0"] || navigator.plugins["Shockwave Flash"]) { var swVer2 = navigator.plugins["Shockwave Flash 2.0"] ? " 2.0" : ""; var flashDescription = navigator.plugins["Shockwave Flash" + swVer2].description; var descArray = flashDescription.split(" "); var tempArrayMajor = descArray[2].split("."); var versionMajor = tempArrayMajor[0]; var versionMinor = tempArrayMajor[1]; var versionRevision = descArray[3]; if (versionRevision == "") { versionRevision = descArray[4] } if (versionRevision[0] == "d") { versionRevision = versionRevision.substring(1) } else if (versionRevision[0] == "r") { versionRevision = versionRevision.substring(1); if (versionRevision.indexOf("d") > 0) { versionRevision = versionRevision.substring(0, versionRevision.indexOf("d")) } } var flashVer = versionMajor + "." + versionMinor + "." + versionRevision } } else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.6") != -1) flashVer = 4; else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.5") != -1) flashVer = 3; else if (navigator.userAgent.toLowerCase().indexOf("webtv") != -1) flashVer = 2; else if (isIE && isWin && !isOpera) { flashVer = ControlVersion() } return flashVer } function DetectFlashVer(reqMajorVer, reqMinorVer, reqRevision) { versionStr = GetSwfVer(); if (versionStr == -1) { return false } else if (versionStr != 0) { if (isIE && isWin && !isOpera) { tempArray = versionStr.split(" "); tempString = tempArray[1]; versionArray = tempString.split(",") } else { versionArray = versionStr.split(".") } var versionMajor = versionArray[0]; var versionMinor = versionArray[1]; var versionRevision = versionArray[2]; if (versionMajor > parseFloat(reqMajorVer)) { return true } else if (versionMajor == parseFloat(reqMajorVer)) { if (versionMinor > parseFloat(reqMinorVer)) return true; else if (versionMinor == parseFloat(reqMinorVer)) { if (versionRevision >= parseFloat(reqRevision)) return true } } return false } } function AC_AddExtension(src, ext) { if (src.indexOf('?') != -1) return src.replace(/\?/, ext + '?'); else return src + ext } function AC_Generateobj(objAttrs, params, embedAttrs) { var str = ''; if (isIE && isWin && !isOpera) { str += '<object '; for (var i in objAttrs) str += i + '="' + objAttrs[i] + '" '; str += '>'; for (var i in params) str += '<param name="' + i + '" value="' + params[i] + '" /> '; str += '</object>' } else { str += '<embed '; for (var i in embedAttrs) str += i + '="' + embedAttrs[i] + '" '; str += '> </embed>' } document.write(str) } function AC_FL_RunContent() { var ret = AC_GetArgs(arguments, ".swf", "movie", "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000", "application/x-shockwave-flash"); AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs) } function AC_GetArgs(args, ext, srcParamName, classid, mimeType) { var ret = new Object(); ret.embedAttrs = new Object(); ret.params = new Object(); ret.objAttrs = new Object(); for (var i = 0; i < args.length; i = i + 2) { var currArg = args[i].toLowerCase(); switch (currArg) { case "classid": break; case "pluginspage": ret.embedAttrs[args[i]] = args[i + 1]; break; case "src": case "movie": args[i + 1] = AC_AddExtension(args[i + 1], ext); ret.embedAttrs["src"] = args[i + 1]; ret.params[srcParamName] = args[i + 1]; break; case "onafterupdate": case "onbeforeupdate": case "onblur": case "oncellchange": case "onclick": case "ondblClick": case "ondrag": case "ondragend": case "ondragenter": case "ondragleave": case "ondragover": case "ondrop": case "onfinish": case "onfocus": case "onhelp": case "onmousedown": case "onmouseup": case "onmouseover": case "onmousemove": case "onmouseout": case "onkeypress": case "onkeydown": case "onkeyup": case "onload": case "onlosecapture": case "onpropertychange": case "onreadystatechange": case "onrowsdelete": case "onrowenter": case "onrowexit": case "onrowsinserted": case "onstart": case "onscroll": case "onbeforeeditfocus": case "onactivate": case "onbeforedeactivate": case "ondeactivate": case "type": case "codebase": ret.objAttrs[args[i]] = args[i + 1]; break; case "id": case "width": case "height": case "align": case "vspace": case "hspace": case "class": case "title": case "accesskey": case "name": case "tabindex": ret.embedAttrs[args[i]] = ret.objAttrs[args[i]] = args[i + 1]; break; default: ret.embedAttrs[args[i]] = ret.params[args[i]] = args[i + 1] } } ret.objAttrs["classid"] = classid; if (mimeType) ret.embedAttrs["type"] = mimeType; return ret }</script>
+<link href="//assets.swayam.gov.in/wiziqcss/redactor/redactor.css?ver=3003.0013" rel="stylesheet" type="text/css" />
+
+
+
+    <div class="bread-crum marginB-30px top15" style="border: 0px;">
+        <div class="container">
+            <div class="clearfix">
+                <a id="ancReturnToSchedule" href="/courses/4483-research-writing/schedule" class="sprite" style="padding:0px 15px;">
+                    <span class="arrows">&nbsp; &nbsp;  Back to schedule</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="MathBuffer" style="border:1px solid; padding: 3px; width:50%; margin-top:5px;visibility:hidden; position:absolute; top:0; left: 0"></div>
+
+
+
+<div class="bread-crum marginB-30px topHeaderBreadcrumb">
+    <div class="container">
+        <ul class="clearfix">
+            <li>
+                <a class="active" href="https://swayam.gov.in/courses/">Courses</a> / Research Writing
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">  
+    <div class="row">
+        <!--Course List-->
+        <div class="top20 clearfix">
+            <div class="clearfix">                
+                <div class="col-lg-19 col-md-19 col-sm-19">
+                    <div class="course-description">
+                        <h1 class="main-title">Research Writing</h1>
+                        <p class="h4 ">Research Writing</p>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Course List Ends-->
+    </div>
+</div>
+    <div class="container-fluid nonResponsive top30 bottom30" id="maincontainer">
+        <div class="container">
+            <!--About the Instructor-->
+            <div class="row" id="dvScheduleRow">
+                <div class="container-w viewer-tab-container clearfix">
+                    <!-- left panel start -->
+                    <div class="col-lg-4 no-gutter" style="margin-top: -2px;">
+<style type="text/css">
+    .left8 {margin-left:7px
+    }
+</style>
+<div class="viewer-tab clearfix">
+
+    <div class="rposition no-gutter">
+
+        <div class="full-width rposition" style="overflow: hidden; bottom: -1px;">
+
+            <ul id="sectionsbar" class="nav sectionBarUL nav-tabs " role="listbox">
+
+                <li class="sectionBar active item">
+
+                        <a id="12106" class="objSection" href="/courses/4483-research-writing/viewcourseware?cinfo=MP7Z4Xew369qzk100Z%252b6MWW5RbdvgBWBVNzKr%252fiUIBMnQoMAt6O7Lp9JVpGUOM2Ec%252b6JAb91ejBxCQt8MDxRJK%252b%252fhvVeBspCgksyxZ%252f9KI%252fcYgYwnq8Ng%252brz0w6Hui9RqarJu29fyKQ1fWU6bxG%252fApb%252fX1cf5BIQRuwTwUDqCNg%253d" style="min-height: 55px; padding: 6px 12px;" data-section-id="12106">
+                            <span class="font-12 fleft section-eillips"> Week 1</span><br />
+                            <span class="font-14 clearfix fleft">05 Feb - 11 Feb</span>
+                            
+                        </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+        <a class="tab-next" style="display: none;" data-jcarouselcontrol="true">NEXT</a>
+    </div>
+
+</div>
+
+                    </div>
+                    <!-- left panel end -->
+                    <!-- right panel start -->
+                    <div class="col-lg-20 white-bg">
+                        <div id="dvsubsectionsbar">
+
+<div class="full-width schedule-dates top20 clearfix">
+                <div class="full-width" style="height: 65px;">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="clearfix jcarousel jcarousel2" style="position: absolute; height: 80px; width:100%">
+                            <ul id="subsectionsbar">
+
+                                <li id="li_115135" class="2">
+                                    <a id="115135" class="item-column fleft " title="Lecture 1 : Introduction to the course"
+                                       data-toggle="tooltip" data-placement="bottom" data-oid="115135" data-otype="2"
+                                       href="/courses/4483-research-writing/viewcourseware?cinfo=MP7Z4Xew369qzk100Z%252b6MWW5RbdvgBWBVNzKr%252fiUIBMnQoMAt6O7Lp9JVpGUOM2Ec%252b6JAb91ejBxCQt8MDxRJK%252b%252fhvVeBspCgksyxZ%252f9KI%252fcYgYwnq8Ng%252brz0w6Hui9RqarJu29fyKQ1fWU6bxG%252fApb%252fX1cf5BIQRuwTwUDqCNg%253d">
+                                        <span class="clearfix">All Week</span>
+
+                                        <span class="ico-youtube-white ico top7"></span>
+                                        <span class="top7 center-block txt-align-center inlineBlock loader" style="display: none">
+                                            <img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/tab_load.gif" width="30" height="23" />
+                                        </span>
+
+
+                                        <span class="arrow-b" style='display: ? "block":"none"'></span>
+
+                                    </a>
+                                </li>
+                                <li id="li_115137" class="2">
+                                    <a id="115137" class="item-column fleft " title="Lecture 2 : What is research writing"
+                                       data-toggle="tooltip" data-placement="bottom" data-oid="115137" data-otype="2"
+                                       href="/courses/4483-research-writing/viewcourseware?cinfo=MP7Z4Xew369qzk100Z%252b6MWW5RbdvgBWBrypo5TOYwNp%252fZPf9By1gyb8BXEuzCaMbig3LWNm6kCYfzn8Dv2I0KCzKKJpNMZySNTShnemmB%252f%252bwnDaC%252fr6o5iPCiL1fe2PVNL6hUOzGhMcm%252b2jTfHeM8kAVvHX8zytr3xVbU9rGgOQ%253d">
+                                        <span class="clearfix">All Week</span>
+
+                                        <span class="ico-youtube-white ico top7"></span>
+                                        <span class="top7 center-block txt-align-center inlineBlock loader" style="display: none">
+                                            <img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/tab_load.gif" width="30" height="23" />
+                                        </span>
+
+
+                                        <span class="arrow-b" style='display: ? "block":"none"'></span>
+
+                                    </a>
+                                </li>
+                                <li id="li_115139" class="2">
+                                    <a id="115139" class="item-column fleft active" title="Lecture 3 : The Writing Process"
+                                       data-toggle="tooltip" data-placement="bottom" data-oid="115139" data-otype="2"
+                                       href="/courses/4483-research-writing/viewcourseware?cinfo=MP7Z4Xew369qzk100Z%252b6MWW5RbdvgBWBPkJybJbpPaACfJkkOJVNhrH1iYYJjZ242lgaA%252f7wAQDRION9DeR7d7PQ5KfVCjRu1OttSPoAkmEExobSDgMbYAgukbGZmFqCF9EuHipEnzePEyK3r9nUGskyU8UowDC%252bu0MbAar70pQ%253d">
+                                        <span class="clearfix">All Week</span>
+
+                                        <span class="ico-youtube-white ico top7"></span>
+                                        <span class="top7 center-block txt-align-center inlineBlock loader" style="display: none">
+                                            <img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/tab_load.gif" width="30" height="23" />
+                                        </span>
+
+
+                                        <span class="arrow-b" style='display:  style ? "block":"none"'></span>
+
+                                    </a>
+                                </li>
+                                <li id="li_115140" class="2">
+                                    <a id="115140" class="item-column fleft " title="Lecture 4 : The Writing Process 2"
+                                       data-toggle="tooltip" data-placement="bottom" data-oid="115140" data-otype="2"
+                                       href="/courses/4483-research-writing/viewcourseware?cinfo=MP7Z4Xew369qzk100Z%252b6MWW5RbdvgBWB9iLdWfyaQ4mtbVMHNMMIne2IXGRYK44dNG1CzoVxr7MSQxjvTH%252fEXW90FlSXtXhaplEKEG8hRhMnKqyAtlSprVnFSIKWP9RZHgUArY2yrGcwXz7CuDTVcoc6O1mtGwWhfgqRjhfkPP4%253d">
+                                        <span class="clearfix">All Week</span>
+
+                                        <span class="ico-youtube-white ico top7"></span>
+                                        <span class="top7 center-block txt-align-center inlineBlock loader" style="display: none">
+                                            <img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/tab_load.gif" width="30" height="23" />
+                                        </span>
+
+
+                                        <span class="arrow-b" style='display: ? "block":"none"'></span>
+
+                                    </a>
+                                </li>
+                                <li id="li_115142" class="2">
+                                    <a id="115142" class="item-column fleft " title="Lecture 5 : Finding what to read"
+                                       data-toggle="tooltip" data-placement="bottom" data-oid="115142" data-otype="2"
+                                       href="/courses/4483-research-writing/viewcourseware?cinfo=MP7Z4Xew369qzk100Z%252b6MWW5RbdvgBWB3y9BdyE610uDLioDr3On9KhDtwnm%252becBzFZw2FESlqLy9u3q8J7js0IsFAsdJXgUdsAlD%252b3LmIX4sTGQ9XTPiNUrmNqv4gyVo0lYE%252fi7rz1T995F2NOA7AlzKomxfPYeFKfgemd6SUE%253d">
+                                        <span class="clearfix">All Week</span>
+
+                                        <span class="ico-youtube-white ico top7"></span>
+                                        <span class="top7 center-block txt-align-center inlineBlock loader" style="display: none">
+                                            <img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/tab_load.gif" width="30" height="23" />
+                                        </span>
+
+
+                                        <span class="arrow-b" style='display: ? "block":"none"'></span>
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   
+                        <div id="dvDocument" class="top20">
+
+
+
+
+<link href="//amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+<script src="//amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
+<div class="tab-content clearfix" id="0">
+    <div class="tab-pane active" id="first">
+        <div class="full-width" style="min-height: 450px; margin-bottom: 30px;">
+
+            
+                <div class="doc-view-wrapper">
+                    <div class="doc-view-head-wrapper pad-l20 pad-r20">
+
+                        <a class="view-prev fleft font-12" id="aPrevObj" data-content-id="0"> PREV </a>
+                        <a class="view-next fright font-12" id="aNextObj" data-content-id="0">NEXT</a>
+
+                        <div class="doc-view-head">
+                            <span class="title-hide">Lecture 3 : The Writing Process</span>
+                            <span id="spanLoader" style="display: none; margin: auto;z-index:1000">
+                                <img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/content_loading.gif" width="166" height="30">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="fleft clearfix top10" style="margin-left:20px;display:none;" id="noflash" >
+                        <span style="color:red">You Don't have flash plugin installed/enabled.</span>
+                        <a href="https://www.adobe.com/go/getflashplayer" target="_blank">Get it here.</a>
+                    </div>
+
+
+                    <div class="pad-l20 pad-r20  clearfix ">
+
+                            <div class="playerDiv" id="divExternalPlayer" style="background-color: #000; text-align: center; width: 100%;">
+                                <iframe width="700" height="416.630196936543" src="https://www.youtube.com/embed/b1ZfvCnej6c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe >;
+                            </div>
+                </div>
+
+                <div class="clearfix bottom15 pad20 pad-t5">
+
+                    <div id="divDesc">
+                            <strong>Description</strong><br/>
+                            <asp:label id="lblDescription" runat="server">Stages of research writing<br>
+Applications of research writing<br>
+The writing process</asp:label>
+        </div>
+
+
+    </div>
+    </div>
+   
+
+    </div>
+    </div>   
+</div>
+<script>
+    $(document).ready(function () {
+        var contentType = 8;
+     
+            $.ajax({
+                type: "POST",
+                url: '/courses/UpdateCourseLearnerProgress',
+                data: { learnerProgress: GetLearnerProgressJSON() },
+                dataType: "json",
+                success: function (response) {
+                },
+                error: function () {
+                }
+            });
+            function GetLearnerProgressJSON() {
+                var learnerProgress = {
+                    CourseId: 4483,
+                    ObjectId: 115139,
+                    ObjectType: 2,
+                    ContentType: contentType,
+                }
+                return learnerProgress;
+            };
+        
+    });
+
+  
+    //section capture video insights
+    
+
+    window.onbeforeunload = function() {
+        InsertVideoLogs();
+    }
+
+    function InsertVideoLogs() {
+        if(typeof myPlayer === 'undefined')
+            return false;
+
+        var viewTypeId = 1; //Course = 1
+        var contentParentId = 4483;
+        //var ownerId ;
+        var contentType = 8;
+
+        if(typeof myPlayer != 'undefined'){
+            var time = Math.round(myPlayer.duration());
+            var currentTime = Math.round(myPlayer.currentTime());
+            
+            if(typeof currentTime == 'undefined')
+                currentTime = 0;
+        }
+        if (!ended) {
+            seekPos += "||end:" + currentTime;
+        }
+        pausedCount =  (pausedCount - (3 + seekCount));
+
+        var videoLogs = {
+            ContentID : 115139,
+            ContentParentId : contentParentId,
+            ViewTypeId : viewTypeId,
+            viewerMemberId : 170952,
+            ownerMemberId :1633142,
+            contentType :contentType,
+            contentLength : time,
+            FullScreenViews : fullscreenViews,
+            CompleteViews : completeViews,
+            PauseCount :  pausedCount < 0 ? 0 : pausedCount,
+            VolumeChange : volumeChange,
+            seekPositions : seekPos,
+            ViewerIPAddress : '10.10.4.4',
+            ContentType :contentType,
+            viewUrl : 'swayam.gov.in',
+            errorMessage : errormsg
+        }
+       
+        $.ajax({
+            type: "POST",
+            url: '/Courses/InsertVideoLogs',
+            data: {videoLogs},
+            dataType: "json",
+            success : function() {
+                myPlayer.dispose();  
+            },
+            async : false,
+            error:function(err) {
+                myPlayer.dispose();
+                //console.log(err);
+            }
+        });
+        
+    }
+
+</script>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- right panel end -->
+                </div>
+            </div>
+        </div>
+
+        <div id="hiddencontentdvppt" style="display: none">
+        </div>
+        <div id="hiddencontentdv" style="display: none">
+        </div>
+        <input type="hidden" id="nextvalue" />
+        <input type="hidden" id="prevvalue" />
+        <input type="hidden" value="" id="hdAttemptId" />
+        <input type="hidden" value="" id="hdloadcmp" />
+        <input type="hidden" value="" id="hdAttemptCnt" />
+        <input type="hidden" value="" id="hdnTestId" />
+
+
+    </div>
+    <!-- modal popup for course restriction-->
+    <div aria-hidden="false" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" id="modalpopUp" class="modal fade custom-modal in">
+        <div class="modal-dialog popup-delete">
+            <div class="modal-content pad20" style="width:450px">
+                <div class="clearfix">
+                    <span class="ico-settings ico-deletefail inlineBlock fleft"></span>
+
+                    <div class="col-lg-18 left15">
+                        <p class="color333 font-13" style="font-size: 13px">
+                            The courseware you&#39;re trying to view is restricted. Please contact <a href="mailto:"></a>                            for further queries.
+                        </p>
+
+                        <div class="clearfix top20 fleft">
+                            <a href="https://swayam.gov.in/dashboard" class="primary-btn primary-btn-color top5">OK</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal popup for pre course survey-->
+    <div aria-hidden="false" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" id="modalpopUpSurvey" class="modal fade custom-modal in">
+        <div class="modal-dialog popup-delete" style="margin-top:200px;">
+            <div class="modal-content pad20" style="width:450px">
+                <div class="clearfix">
+
+                    <p class="color333 font-13" style="font-size: 13px">
+                        Please take the pre-course survey to access your course content.
+                    </p>
+
+                    <div class="clearfix top20 fleft">
+                        <span class="orange-full-btn pull-left top5" onclick="javascript: RedirectToCourseSurvey();" style="cursor:pointer;">OK</span>
+
+                        <span onclick="javascript: hidepopup();" class="graybtn pull-left top5 left10" style="cursor:pointer;">Cancel</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modal popup after pre course survey submitted-->
+    <div aria-hidden="false" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" id="modalpopUpAfterSurvey" class="modal fade custom-modal in">
+        <div class="modal-dialog popup-delete" style="margin-top:200px;">
+            <div class="modal-content" style="width:450px">
+                <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnSurveySuccessClose"><span aria-hidden="true">X</span></button> <h4 class="modal-title"> Submission Confirmation</h4> </div>
+                <div class="modal-body clearfix">
+
+                    <p class="color333 font-13" style="font-size: 13px">
+                        Thank you for completing the survey!
+                    </p>
+
+                    <div class="clearfix top20 fleft">
+                        <span href="/Courses/viewcourseware?cInfo=" class="orange-full-btn pull-left top5" style="cursor:pointer;" id="spSurveySuccessOk">OK</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        if ('False' == 'True' && 'False' == 'False' && 'False' == 'False') {
+            $('#modalpopUpSurvey').show();
+            disableScroll();
+
+            //$('.course-detail-container,#headerContainer').css({ 'opacity': '0.2', 'pointer-events': 'none', 'cursor': 'default', });
+            $('#dvScheduleRow,.bread-crum,.container,#dashboard-header,#headerContainer').css({ 'opacity': '0.2', 'pointer-events': 'none', 'cursor': 'default', });
+        }
+        if('False' == 'True' && 'False' == 'False')
+        {
+            $('#modalpopUpSurvey').hide();
+            $('#modalpopUpAfterSurvey').show();
+            disableScroll();
+            $('#dvScheduleRow,.bread-crum,.container,#dashboard-header,#headerContainer').css({ 'opacity': '0.2', 'pointer-events': 'none', 'cursor': 'default', });
+            //$('.course-detail-container,#headerContainer').css({ 'opacity': '0.2', 'pointer-events': 'none', 'cursor': 'default', });
+        }
+        var hasFlash = false;
+        function isFlashEnabled(){
+            try
+            {
+                var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+                if(fo) hasFlash = true;
+            }
+            catch(e)
+            {
+                if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) hasFlash = true;
+            }
+            return hasFlash;
+        }
+        showsafetestquit = function showsafetestquit(type, SectionID) {
+            $("#switchTabsSections").show();
+            $("#switchTabsSections-mask").show();
+            $("#switchTabsSectionsok").attr("typeid", SectionID);
+            $("#switchTabsSectionsok").attr("type", type);
+        }
+        hidesafetestquit = function hidesafetestquit() {
+            $("#switchTabsSections").hide();
+            $("#switchTabsSections-mask").hide();
+        }
+        $(".exit-test-popup-close").click(function () {
+            $("#switchTabsSections").hide();
+            $("#switchTabsSections-mask").hide();
+        });
+        $("#switchTabsSectionsok").click(function (e) {
+            e.preventDefault();
+            var typeoftab = $("#switchTabsSectionsok").attr("type");
+            var typeoftabID = $("#switchTabsSectionsok").attr("typeid");
+
+            IsTestStarted = "false";
+            if (typeoftab == "sec") {
+                switchTabsSections(typeoftabID);
+            } else if (typeoftab == "test") {
+                switchTabstests(typeoftabID);
+            } else if (typeoftab == "nxt") {
+                viewNextexam();
+            } else if (typeoftab == "pre") {
+                ViewPrevExam();
+            } else if (typeoftab == "redirect") {
+                window.location.href = typeoftabID;
+            }
+            hidesafetestquit();
+            $("#switchTabsSectionsok").attr("typeid", "");
+
+        });
+        $("#switchTabsSectionsno").click(function (e) {
+            e.preventDefault();
+            hidesafetestquit();
+        })
+    });
+
+    //$(document).on('click', 'a', function (event) {
+
+    //    if (IsTestStarted == true) {
+    //
+    //        event.preventDefault();
+    //        var src = $(this);
+    //        if (window.confirm("Exit Test?")) {
+    //            //return window.location.href = src.attr('href');
+    //            event.stopPropagation();
+    //        } else {
+    //            return false;
+    //        }
+    //    }
+    //});
+
+    function RedirectToCourseSurvey()
+    {
+        if(0!=0)
+        {
+            window.location.href = "/Courses/PreCourseSurvey?cInfo=&sqtr=";
+        }
+    }
+    function hidepopup()
+    {
+        window.location.href = "/Courses/4483-research-writing";
+    }
+    $('#btnSurveySuccessClose').on('click',function(){
+        RedirectToMainPage();
+    });
+    $('#spSurveySuccessOk').on('click',function(){
+        RedirectToMainPage();
+    });
+    function RedirectToMainPage()
+    {
+        window.location.href = "/Courses/viewcourseware?cInfo=";
+    }
+    //disable scroll on popup display
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault)
+            e.preventDefault();
+        e.returnValue = false;
+    }
+
+    function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+            preventDefault(e);
+            return false;
+        }
+    }
+    function disableScroll() {
+        if (window.addEventListener) // older FF
+            window.addEventListener('DOMMouseScroll', preventDefault, false);
+        window.onwheel = preventDefault; // modern standard
+        window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+        window.ontouchmove = preventDefault; // mobile
+        document.onkeydown = preventDefaultForScrollKeys;
+    }
+
+    </script>
+    <script type="text/javascript">
+    window.logID = 0;
+    window.date = 0;
+
+
+    function pushInsights() {
+        window.slider=$('.bxslider').bxSlider({
+            autoControls: true,
+            adaptiveHeight: true,
+            slideWidth: 690,
+            pager: true,
+            pagerType: 'short',
+            infiniteLoop: false,
+            hideControlOnEnd: true,
+            onSliderLoad: function () {
+                addView();
+            },
+            onSlideNext: function () {
+                addStats();
+                window.date = new Date();
+            },
+            onSlidePrev: function () {
+                addStatsPrev();
+                window.date = new Date();
+            }
+        });
+    }
+    function addView() {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://analytics.swayam.gov.in/addview.aspx",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            "data": window.responsePlayer
+        }
+
+        $.ajax(settings).done(function (response) {
+            window.logID = response;
+            window.date = new Date();
+        });
+    }
+    function addStatsPrev() {
+        var currentSlide = (window.slider.getCurrentSlide() + 1);
+        var nextSlide = (currentSlide + 1);
+        var newDate = new Date();
+        var finalTime = (newDate - window.date) / 1000;
+
+        if (currentSlide == 1) {
+            nextSlideNew = 2;
+        }
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://analytics.swayam.gov.in/addstats.aspx",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            "data": { s: nextSlide, ns: (nextSlide + 1), i: logID, t: Math.ceil(finalTime) }
+        }
+
+        $.ajax(settings).done(function (response) {
+            //console.log(response);
+        });
+    }
+    function addStats() {
+        var currentSlide = (window.slider.getCurrentSlide());
+        var nextSlide = (currentSlide + 1);
+        var newDate = new Date();
+        var finalTime = (newDate - window.date) / 1000;
+        if (currentSlide == 1) {
+            nextSlide = 2;
+        }
+        if (currentSlide == window.slider.getSlideCount()) {
+            nextSlide = 1;
+        }
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://analytics.swayam.gov.in/addstats.aspx",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            "data": { s: currentSlide, ns: nextSlide, i: logID, t: Math.ceil(finalTime) }
+        }
+
+        $.ajax(settings).done(function (response) {
+            //console.log(response);
+        });
+    }
+
+    $('#dv_AsgnContent').on('hidden.bs.modal', function (e) {
+        $('#dv_AsgnContent').find('iframe#ifrAsgnContent').attr('src', '')
+    });
+
+    //Bind next previous links
+
+    var nextObjectHref = $('ul#subsectionsbar li').has('a.active').next().find('a').attr('href');
+    $('a#aNextObj').attr('href', nextObjectHref);
+    $('a.view-next').attr('href', nextObjectHref);
+
+    var prevObjectHref = $('ul#subsectionsbar li').has('a.active').prev().find('a').attr('href');
+    $('a#aPrevObj').attr('href', prevObjectHref);
+    $('a.view-prev').attr('href', prevObjectHref);
+
+
+    // KEEP THIS PORTION AS A LAST JAVASCRIPT TO BE RUN ON THE PAGE
+    // ################## To disable AJAX for VIDEO-INSIGHTS issue ##################
+
+
+    </script>
+    <link href="//assets.swayam.gov.in/prelogin/CSS/jquery.bxslider.css?ver=3003.0013" rel="stylesheet" />
+    <style>
+        .mask {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0.9;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .mask-0 {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0.1;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        .custom-popup {
+            position: fixed;
+            z-index: 100000;
+            top: 50%;
+            left: 50%;
+            padding: 1em;
+            background: white;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            /*box-shadow: .1em .1em .3em rgba(0,0,0,.5);*/
+            -webkit-filter: drop-shadow(.15em .1em .2em rgba(0, 0, 0, .5));
+            -moz-filter: drop-shadow(.15em .1em .2em rgba(0, 0, 0, .5));
+            -o-filter: drop-shadow(.15em .1em .2em rgba(0, 0, 0, .5));
+            -ms-filter: drop-shadow(.15em .1em .2em rgba(0, 0, 0, .5));
+            filter: drop-shadow(.15em .1em .2em rgba(0, 0, 0, .5));
+        }
+
+        span.close {
+            content: "X";
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            right: -0.7em;
+            top: -0.7em;
+            background: white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 0.4em;
+            color: #000000;
+            font-size: 1em;
+            border-left-color: #fb3;
+            border-right-width: 0;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+            span.close:hover {
+                opacity: 1;
+            }
+
+        .custom-popup > .heading,
+        .custom-popup > .content,
+        .custom-popup > .footer {
+            padding: 0.5em;
+        }
+
+        .pull-right {
+            float: right;
+        }
+
+        .blue {
+            color: #007dc8;
+            cursor: pointer;
+        }
+
+        .yesno {
+            margin: 0 0.5em;
+        }
+    </style>
+
+
+    <div id="switchTabsSections-mask" class="mask" style="display: none"></div>
+    <div class="custom-popup" style="width: 20em; display: none" id="switchTabsSections">
+        <!--<div class="heading">Your test could not be submitted</div>-->
+        <span class="close exit-test-popup-close">X</span>
+        <div class="content">
+            <p>Exit test?</p>
+        </div>
+        <div class="footer">
+            <a id="switchTabsSectionsno" class="pull-right blue yesno">No</a>
+            <a id="switchTabsSectionsok" class="pull-right blue yesno">Yes</a>
+        </div>
+    </div>
+    <div id="learnosityloader-mask" class="mask" style=" display:none;"></div>
+    <div class="custom-popup" style="width: 11em; display:none;" id="learnosityloader">
+        <div class="content">
+            <p><img src="//assets.swayam.gov.in//wiziqcss/css/skin01/images/loading-grey.gif" style="display:inline;" /> &nbsp;&nbsp;Loading..</p>
+        </div>
+    </div>
+
+    <div class="modal fade custom-modal" id="popUp" tabindex="-1" role="dialog" aria-labelledby="popUp" aria-hidden="true">
+        <div class="modal-content pad20" style="max-width: 370px;">
+            <div class="clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span class="sr-only">Close</span><span aria-hidden="true">×</span>
+                </button>
+                <p style="border-bottom:solid 1px #dfdfdf; padding-bottom:10px; font-size:18px">Submission Confirmation</p>
+            </div>
+            <div>
+                <form role="form" class="ng-pristine ng-valid">
+                    <div style="margin:0 auto;width: 293px;">
+                        <div class="form-group">
+                            <label class="control-label top5">You have successfully submitted your work.</label>
+                        </div>
+                        <div style="margin:0 auto; width:97px" class="clearfix text-center">
+                            <span class="primary-btn btn center" data-dismiss="modal">
+                                OK
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <div style="margin-top: -20px">
+
+<style>
+    .viewbtn:hover {
+        text-decoration: none;
+    }
+
+    .shdowdv {
+        background-color: #fafafa;
+        -moz-box-shadow: -3px -3px 3px #888;
+        -webkit-box-shadow: -3px -3px 3px #888;
+        box-shadow: -3px -3px 3px #888;
+        padding: 10px 0;
+    }
+
+        .shdowdv .text-dv {
+            color: #444;
+            font-size: 3.5vw;
+            vertical-align: middle;
+            margin-top: 15px;
+            float: left;
+        }
+
+        .shdowdv .viewbtn {
+            margin-top: 15px;
+            color: #fff;
+            font-size: 3vw;
+            background-color: #1976d2;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            padding: 10px;
+            float: right;
+        }
+   
+</style>
+<style type="text/css">
+    a.back-to-top {
+        display: none;
+        width: 60px;
+        height: 60px;
+        text-indent: -9999px;
+        position: fixed;
+        z-index: 999;
+        right: 20px;
+        bottom: 20px;
+        background: #f48120 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAM1JREFUeNrs12ELgyAQBuDcPx9OxIlrErGfeysQBs4r7zwJohfuo/dEqFcKAIYjchsOygVTcl9Ks1evm4tRGn55cHpwUAP/Mb1hC3hsL9jBfpw07KE+XgoOQE9ohV/Az7iUosIqLWzNG8MxNIJcYgkvoVNlw0+qmkw5nsNzZaM5NVLENSjMeXrKW2LDEdkstfuCBW8ej8qTQIZHwtUapODAmGC+FfbAm9drPbmwa0CxibYLWwG0NMM3YSOI5l8tKKw7oMXe6vqTOD38FWAAl8JSohyMtPcAAAAASUVORK5CYII=') no-repeat center 43%;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;
+    }
+
+    a:hover.back-to-top {
+        background-color: #000;
+    }
+
+    .navbar-default {
+        background-color: #fff !important;
+        border-color: #fff !important;
+    }
+</style>
+
+
+
+<div id="social_connections">
+    <div class="container container-max">
+        <div class="col-md-24 col-sm-24 col-xs-24 pad-0">
+            <div class="dw-app">
+                <div class="row">
+                    <div class="col-md-14 col-sm-24 col-xs-24">
+                        <div class="dw-app-primary" style="margin-bottom:60px">
+                            <b><p class="ft-16">Download App</p></b>
+                                <p class="ft-14">Download SWAYAM applications from popular app stores</p>
+                            <div class="click-download hidden-xs">
+                                    <a href="https://play.google.com/store/apps/details?id=in.gov.swayam.app" title="" class="play-store"><img src="//assets.swayam.gov.in/Swayam/images/google-app.png" class="img-responsive" alt="" /></a>
+                                                                    <a href="https://itunes.apple.com/in/app/swayam-online-education/id1146833429?mt=8" title="" class="play-store"><img src="//assets.swayam.gov.in/Swayam/images/button-app-store.png" class="img-responsive" alt="" /></a>
+                                                                    <a href="https://www.microsoft.com/en-in/store/p/swayam/9nblggh4xxml#" title="" class="play-store"><img src="//assets.swayam.gov.in/Swayam/images/window-app.png" class="img-responsive" alt="" /></a>
+
+                            </div>
+                            <div class="click-download visible-xs">
+                                    <a href="https://play.google.com/store/apps/details?id=in.gov.swayam.app" title="" class="play-store"><img src="//assets.swayam.gov.in/Swayam/images/google-app.png" class="img-responsive" alt="" /></a>
+                                                                    <a href="https://itunes.apple.com/in/app/swayam-online-education/id1146833429?mt=8" title="" class="play-store"><img src="//assets.swayam.gov.in/Swayam/images/button-app-store.png" class="img-responsive" alt="" /></a>
+                                                                    <a href="https://www.microsoft.com/en-in/store/p/swayam/9nblggh4xxml#" title="" class="play-store"><img src="//assets.swayam.gov.in/Swayam/images/window-app.png" class="img-responsive" alt="" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-sm-24 col-xs-24">
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="main-footer">
+    <div class="container ft-12">
+        <div class="row">
+            <div class="col-md-12 col-sm-28">
+                <div class="ft-links">
+                    <ul class="list-inline">
+                        <li><a href="https://swayam.gov.in/help">Help</a></li>
+                        <li><a href="https://swayam.gov.in/TermsOfUse">Terms of Use</a></li>
+                        <li><a href="https://swayam.gov.in/PrivacyPolicy">Privacy Policy</a></li>
+                                <li><a href="https://swayam.gov.in/ContactUs">Contact Us</a></li>
+                                    <li><a href="https://swayam.gov.in/SubmitYourIdea">Submit Course Idea</a></li>
+                                <li><a href="https://swayam.gov.in/Grievances">Grievances</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-20">
+                <div class="swayam_helplines">
+                    <ul class="list-inline">
+                        <li>
+                            <strong>Swayam helpline: </strong><span style="padding-left:3px;">
+18001219025
+                            </span>
+                        </li>
+                        <li><strong style="padding-left:8px">email:</strong>&nbsp;<a href="mailto:support@swayam.gov.in"> support@swayam.gov.in</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <span>
+                        Copyright © 2018. MHRD
+                    </span>
+                        
+                        <a href="#toTop" class="toTop"></a>
+                        <a name="toTop"></a>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-max">
+
+        <div class="col-lg-24">
+
+
+            <p class="clearfix"></p>
+
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+    // create the back to top button
+    $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+
+    // change the value with how many pixels scrolled down the button will appear
+    var amountScrolled = 200;
+
+    $(window).scroll(function () {
+        if (jQuery(window).scrollTop() > amountScrolled) {
+            jQuery('a.back-to-top').fadeIn('slow');
+        } else {
+            jQuery('a.back-to-top').fadeOut('slow');
+        }
+    });
+
+    $('a.back-to-top, a.simple-back-to-top').click(function () {
+        $('body, html').animate({
+            scrollTop: 0
+        }, 'slow');
+        return false;
+    });
+
+</script><script src="//assets.swayam.gov.in/prelogin/js/bootstrap.js?ver=3003.0013" type="text/javascript"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#iebrowser').modal('hide');
+        var ie = (function () {
+            var undef,
+                v = 3,
+                div = document.createElement('div'),
+                all = div.getElementsByTagName('i');
+            while (
+                div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+                all[0]
+            );
+            return v > 4 ? v : undef;
+        }());
+        if (ie <= 8) {
+            $('#iebrowser').modal('show');
+        }
+    });
+
+    $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+    var amountScrolled = 200;
+
+    $(window).scroll(function () {
+        if (jQuery(window).scrollTop() > amountScrolled) {
+            jQuery('a.back-to-top').fadeIn('slow');
+        } else {
+            jQuery('a.back-to-top').fadeOut('slow');
+        }
+    });
+
+    $('a.back-to-top, a.simple-back-to-top').click(function () {
+        $('body, html').animate({
+            scrollTop: 0
+        }, 'slow');
+        return false;
+    });
+
+</script>
+    </div>
+
+    
+
+            <script src="//assets.swayam.gov.in/wiziqcss/js/test/scripts/score.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/wiziqcss/js/test/jquery.flot.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/wiziqcss/js/test/jquery.flot.axislabels.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/wiziqcss/js/test/jquery.flot.categories.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/wiziqcss/js/test/scripts/testgraph.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/prelogin/js/bootstrap-select.min.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/wiziqcss/js/test/jquery.tmpl.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/class/plugin.jtemplates.js?ver=3003.0013"></script>
+            <script type="text/javascript" src="//assets.swayam.gov.in/wiziqcss/redactor/redactor.min.js?ver=3003.0013" charset="utf-8"></script>
+            <script src="//assets.swayam.gov.in/prelogin/js/jquery.jcarousel.min.js?ver=3003.0013"></script>
+            <script src="//assets.swayam.gov.in/wiziqcss/js/fb_connect.js?ver=3003.0013" type="text/javascript"></script>
+            <script src="//assets.swayam.gov.in/prelogin/js/jquery.bxslider.js?ver=3003.0013" type="text/javascript"></script>
+
+            <script type="text/x-mathjax-config">
+                
+            </script>
+            <script type="text/javascript" src="//assets.swayam.gov.in/ckEditor/ckeditor/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+            <script>
+            var Preview = {
+                delay: 150, // delay after keystroke before updating
+                preview: null, // filled in by Init below
+                buffer: null, // filled in by Init below
+                timeout: null, // store setTimout id
+                mjRunning: false, // true when MathJax is processing
+                mjPending: false, // true when a typeset has been queued
+                oldText: null, // used to check if an update is needed
+                //
+                //  Get the preview and buffer DIV's
+                //
+                Init: function() {
+                    this.preview = document.getElementById("dvDocument");
+                    this.buffer = document.getElementById("MathBuffer");
+                },
+                //
+                //  Switch the buffer and preview, and display the right one.
+                //  (We use visibility:hidden rather than display:none since
+                //  the results of running MathJax are more accurate that way.)
+                //
+                SwapBuffers: function() {
+                    var buffer = this.preview, preview = this.buffer;
+                    this.buffer = buffer;
+                    this.preview = preview;
+                    //buffer.style.visibility = "hidden"; buffer.style.position = "absolute";
+                    //preview.style.position = ""; preview.style.visibility = "";
+                },
+                //
+                //  This gets called when a key is pressed in the textarea.
+                //  We check if there is already a pending update and clear it if so.
+                //  Then set up an update to occur after a small delay (so if more keys
+                //    are pressed, the update won't occur until after there has been
+                //    a pause in the typing).
+                //  The callback function is set up below, after the Preview object is set up.
+                //
+                Update: function() {
+                    if (this.timeout) {
+                        clearTimeout(this.timeout)
+                    }
+                    this.timeout = setTimeout(this.callback, this.delay);
+                },
+                //
+                //  Creates the preview and runs MathJax on it.
+                //  If MathJax is already trying to render the code, return
+                //  If the text hasn't changed, return
+                //  Otherwise, indicate that MathJax is running, and start the
+                //    typesetting.  After it is done, call PreviewDone.
+                //
+                CreatePreview: function() {
+                    Preview.timeout = null;
+                    if (this.mjPending) return;
+                    var text = "";
+                    //if (text === this.oldtext) return;
+                    if (this.mjRunning) {
+                        this.mjPending = true;
+                        MathJax.Hub.Queue(["CreatePreview", this]);
+                    } else {
+                        document.getElementById("MathBuffer").innerHTML = this.oldtext = text;
+                        this.mjRunning = true;
+                        MathJax.Hub.Queue(
+                            ["Typeset", MathJax.Hub, this.buffer],
+                            ["PreviewDone", this]
+                        );
+                    }
+                },
+                //
+                //  Indicate that MathJax is no longer running,
+                //  and swap the buffers to show the results.
+                //
+                PreviewDone: function() {
+                    this.mjRunning = this.mjPending = false;
+                    this.SwapBuffers();
+                }
+            };
+            //
+            //  Cache a callback to the CreatePreview action
+            //
+            Preview.callback = MathJax.Callback(["CreatePreview", Preview]);
+            Preview.callback.autoReset = true; // make sure it can run more than once
+            </script>
+
+
+            <script>
+            // New scripts section(refactoring)
+            $(document).ready(function() {
+
+                var $sectionAnchors = $("ul#sectionsbar li a");
+                var $subsectionAnchors = $("ul#subsectionsbar li a");
+                var activeItemSelector = "ul#subsectionsbar li:has(a.active)";
+
+                $sectionAnchors.on('clicksss',
+                    function(e) {
+                        e.preventDefault();
+                        var $this = $(this);
+                        $this.trigger('SectionItemClicked', [$this.data('section-id')]);
+                    });
+
+                $subsectionAnchors.on('clicksss',
+                    function(e) {
+                        e.preventDefault();
+                        var $this = $(this);
+                        $this.trigger('SubsectionItemClicked', [$this.data('oid'), $this.data('otype')]);
+                        return false;
+                    });
+
+                if ($(activeItemSelector).next().size() > 0) {
+
+                    $(document).on('click',
+                        '#aNextObj',
+                        function(e) {
+                            $(activeItemSelector).next().find('a').trigger('click');
+                        });
+                } else
+                    $('#aNextObj').hide();
+
+
+
+                $(document).on('SubsectionItemClicked',
+                    function(e, oid, otype) {
+
+                        var $eTarget = $(e.target);
+
+                        ToggleObjectLoaderAnimation($eTarget, true);
+                        GetObjectDetails(oid,
+                            otype,
+                            function(response) {
+                                $('#dvDocument').html(response);
+                                ToggleObjectLoaderAnimation($eTarget);
+                                SetActiveSubSection($eTarget);
+                            },
+                            function(error) {
+                                ToggleObjectLoaderAnimation($eTarget);
+                                alert('Error loading courseware');
+                                console.log(response);
+                            });
+                    });
+                $(document).on('SectionItemClicked',
+                    function(e, sectionId) {
+                        alert(sectionId);
+                    });
+            });
+
+            function scrollJCarouselToView($elem, activeSelector) {
+
+                var activeElem = $elem.find(activeSelector);
+                var idx = $elem.filter('li').index(activeElem);
+                $elem('scroll', idx);
+            }
+
+            function ToggleObjectLoaderAnimation($subsectionAnchor, showLoader) {
+
+                console.log($subsectionAnchor[0]);
+                console.log($(document).find("#spLoader").is(":hidden"));
+
+                $(document).find("#spanLoader").toggle();
+                $subsectionAnchor.find('.ico').toggle();
+                $subsectionAnchor.find('.loader').toggle();
+
+            }
+
+            function SetActiveSubSection($subSectionItem) {
+
+                $subSectionItem.closest('ul').
+                find('li a.active').removeClass('active');
+                $subSectionItem.addClass('active');
+            }
+
+            function GetObjectDetails(oid, otype, onSuccess, onError) {
+
+                if (typeof onSuccess != 'function')
+                    onSuccess = function() {}
+                if (typeof onError != 'function')
+                    onError = function() {}
+
+                $.ajax({
+                    type: "POST",
+                    url:
+                        '/courses/4483-research-writing/getcoursewareobjectdetails',
+                    data: { otype: otype, oid: oid },
+
+                    success: onSuccess,
+                    error: onError
+                });
+            }
+            </script>
+
+
+
+
+            <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('.topHeaderBreadcrumb').remove();
+
+                SetNextId(115139);
+                SetPrevId(115139);
+                BindSubmissionBox();
+
+
+                var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
+                function preventDefault(e) {
+                    e = e || window.event;
+                    if (e.preventDefault)
+                        e.preventDefault();
+                    e.returnValue = false;
+                }
+
+                function preventDefaultForScrollKeys(e) {
+                    if (keys[e.keyCode]) {
+                        preventDefault(e);
+                        return false;
+                    }
+                }
+
+                function disableScroll() {
+                    if (window.addEventListener) // older FF
+                        window.addEventListener('DOMMouseScroll', preventDefault, false);
+                    window.onwheel = preventDefault; // modern standard
+                    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+                    window.ontouchmove = preventDefault; // mobile
+                    document.onkeydown = preventDefaultForScrollKeys;
+                }
+
+                if ('False' == 'False' && '0' == '1') {
+                    var modalDialog = $(this).find(".modal-dialog");
+                    modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+                    disableScroll();
+                    // $('#container').hide();
+                    $('#maincontainer,#headerContainer')
+                        .css({ 'opacity': '0.2', 'pointer-events': 'none', 'cursor': 'default', });
+                    $('#modalpopUp').show();
+                    $('#prevlink,#nextlink,#downloadlink').hide();
+                }
+
+                $('.seclock').on('mouseover',
+                    function(event) {
+                        $(this).children().find('.tooltip2').show();
+                    }).on('mouseout',
+                    function(event) {
+                        $(this).children().find('.tooltip2').hide();
+                    });
+
+                $('#exceededAttempts').on('mouseover',
+                    function(event) {
+                        $('.tooltip2').show();
+                    }).on('mouseout',
+                    function(event) {
+                        $('.tooltip2').hide();
+                    });
+
+            });
+
+            function BindSubmissionBox() {
+                $('#txtSubmisionMessage').redactor({
+                    buttons: ['bold', 'italic', 'deleted', 'unorderedlist', 'orderedlist', 'outdent', 'indent'],
+                    minHeight: 150,
+                    deniedTags: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+                    linebreaks: false
+                });
+
+                $('#hdloadcmp').val('True');
+            }
+
+            function GoToSection(sectionId) {
+                var jcarousel = $('.jcarousel');
+                var indexli = $('#' + sectionId).parent("li").index();
+                jQuery(jcarousel).jcarousel('scroll', indexli);
+                if (IsTestStarted == true) {
+                    showsafetestquit('sec', sectionId);
+                } else {
+                    switchTabsSections(sectionId);
+                }
+            }
+
+            function disableSectionsAndSubsections() {
+                $('#sectionsbar, #subsectionsbar').on('click.enableDisableSecAndSubsec',
+                    function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        return false;
+                    });
+            }
+
+            function enableSectionsAndSubsections() {
+                $('#sectionsbar, #subsectionsbar').off('click.enableDisableSecAndSubsec');
+            }
+
+            </script>
+
+            <script type="text/javascript">
+
+            $('body').on('click',
+                '.view-next',
+                function() {
+                    if (IsTestStarted == true) {
+                        showsafetestquit('nxt', '');
+                    } else {
+                        // $('.jcarousel').jcarousel('scroll', '+=1');
+                       // viewNextexam();
+
+                    }
+
+                });
+
+            function viewNextexam() {
+                var objectId = document.getElementById('nextvalue').value;
+                var nextobjectId = $('#li_' + objectId).next("li").children("a").attr("id");
+                var prevobjectId = $('#li_' + objectId).prev("li").children("a").attr("id");
+                var objSpan = "";
+                objSpan = $('#' + objectId).children("span").next('.ico');
+
+                document.getElementById('prevvalue').value = prevobjectId;
+                var objecttype = $('#li_' + objectId).attr("class");
+
+                $('.title-hide').hide();
+                $('#spLoader').show();
+                var classname = "";
+                classname = objSpan.attr('class');
+                ShowSectionLoader(objSpan);
+
+                disableSectionsAndSubsections();
+                $.ajax({
+                    type: "POST",
+                    url: '/courses/4483-research-writing/getobjectdetail',
+                    data: { otid: objecttype, oid: objectId },
+                    dataType: "json",
+
+                    success: function(response) {
+                        enableSectionsAndSubsections();
+                        response = JSON.parse(response);
+                        window.responsePlayer = response.responsePlayer;
+                        var data = response.Html;
+                        var dataplayer = response.dochtml;
+                        var docPlayer = $(data).find('#DocPlayer');
+                        var PPTplayer = $(data).find('#PPTplayer');
+                        if (docPlayer.length > 0) {
+                            $('#hiddencontentdv').html("");
+                            $('<div/>').html(docPlayer).text();
+                            $(docPlayer).find('script').text('');
+                            $('#hiddencontentdv').html(dataplayer);
+                            $('#hiddencontentdv').find('#contentdddiv')
+                                .html($(data).find('#DocPlayer').html(docPlayer.text()));
+                            $('#dvDocument').html($('#hiddencontentdv').html());
+                            if (!swfobject.hasFlashPlayerVersion("1")) {
+                                $('#dvDocument').find('#contentdddiv').html('');
+                                $(document).find('#noflash').show();
+                            }
+
+
+                        } else {
+
+                            if (PPTplayer.length > 0) {
+                                $('.bxslider').remove();
+                                $('<div/>').html(PPTplayer).text();
+                                $('#hiddencontentdvppt').html(dataplayer);
+                                $('#hiddencontentdvppt').find('#contentdddivppt').find('#PPTplayer')
+                                    .html($(dataplayer).find('div#pptpadding'));
+                                $('#dvDocument').html($('#hiddencontentdvppt').html());
+                                $('#hiddencontentdvppt').html("");
+                                pushInsights();
+                            } else {
+                                $('.item-column').removeClass("active");
+                                $('#' + objectId).addClass("active");
+                                if (objecttype == 4)
+                                    BindSubmissionBox();
+                                $('.title-hide').show();
+                                HideSectionLoader(objSpan, classname);
+
+                                if (nextobjectId > 0) {
+                                    document.getElementById('nextvalue').value = nextobjectId;
+                                } else {
+                                    $('.view-next').hide();
+                                    document.getElementById('nextvalue').value = 0;
+                                }
+                                $('#dvDocument').html(data);
+                                if (objecttype == "6") {
+                                    Preview.Update();
+                                }
+                            }
+                        }
+
+                        $('.item-column').removeClass("active");
+                        $('#' + objectId).addClass("active");
+                        if (objecttype == 4)
+                            BindSubmissionBox();
+                        $('.title-hide').show();
+                        HideSectionLoader(objSpan, classname);
+
+                        if (nextobjectId > 0) {
+                            document.getElementById('nextvalue').value = nextobjectId;
+                        } else {
+                            $('.view-next').hide();
+                            document.getElementById('nextvalue').value = 0;
+                        }
+                    },
+                    error: function(response) {
+                        enableSectionsAndSubsections();
+                        alert("Server Error");
+                    }
+                });
+
+            }
+
+            function ShowSectionLoader(obj) {
+                var cname = obj.attr('class');
+                obj.removeClass(cname);
+                obj.html(
+                    '<img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/tab_load.gif" width="30" height="23"/>');
+                obj.addClass("top7 center-block txt-align-center inlineBlock");
+            }
+
+            function HideSectionLoader(obj, className) {
+                var cname1 = obj.attr('class');
+                obj.removeClass(cname1);
+                obj.html('');
+                obj.addClass(className);
+            }
+
+            function ShowSectionWeekLoader(obj) {
+
+                var cname = obj.attr('class');
+                obj.removeClass(cname);
+                obj.html(
+                    '<span class="inlineBlock full txt-align-center"><img src="//assets.swayam.gov.in/wiziqcss/css/skin01/images/main-tabs-loading.gif" width="30" height="23" style="display:inline;"/></span>');
+                obj.addClass("top7 center-block txt-align-center inlineBlock");
+            }
+
+            function HideSectionWeekLoader(obj, className, objHtml) {
+
+                var cname1 = obj.attr('class');
+                obj.removeClass(cname1);
+                obj.html('');
+                obj.html(objHtml);
+                obj.addClass(className);
+            }
+
+            $('body').on('click',
+                '.view-prev',
+                function() {
+                    if (IsTestStarted == true) {
+                        showsafetestquit('pre', '');
+                    } else {
+                      //  $('.jcarousel').jcarousel('scroll', '-=1');
+                      //  ViewPrevExam();
+                    }
+
+
+                });
+
+            function ViewPrevExam() {
+                var objectId = document.getElementById('prevvalue').value;
+
+                var nextobjectId = $('#li_' + objectId).next("li").children("a").attr("id");
+                document.getElementById('nextvalue').value = nextobjectId;
+
+                var prevobjectId = $('#li_' + objectId).prev("li").children("a").attr("id");
+                var objecttype = $('#li_' + objectId).attr("class");
+                var objSpan = "";
+                objSpan = $('#' + objectId).children("span").next('.ico');
+
+                $('.title-hide').hide();
+                $("#spLoader").show();
+
+                var classname = "";
+                classname = objSpan.attr('class');
+                ShowSectionLoader(objSpan);
+
+                disableSectionsAndSubsections();
+
+                $.ajax({
+                    type: "POST",
+                    url: '/courses/4483-research-writing/getobjectdetail',
+                    data: { otid: objecttype, oid: objectId },
+                    dataType: "json",
+                    success: function(response) {
+                        enableSectionsAndSubsections();
+                        response = JSON.parse(response);
+                        window.responsePlayer = response.responsePlayer;
+                        var data = response.Html;
+                        var dataplayer = response.dochtml;
+                        var docPlayer = $(data).find('#DocPlayer');
+                        var PPTplayer = $(data).find('#PPTplayer');
+                        if (docPlayer.length > 0) {
+                            $('#hiddencontentdv').html("");
+                            $('<div/>').html(docPlayer).text();
+                            $(docPlayer).find('script').text('');
+                            $('#hiddencontentdv').html(dataplayer);
+                            $('#hiddencontentdv').find('#contentdddiv')
+                                .html($(data).find('#DocPlayer').html(docPlayer.text()));
+                            $('#dvDocument').html($('#hiddencontentdv').html());
+                            if (!swfobject.hasFlashPlayerVersion("1")) {
+                                $('#dvDocument').find('#contentdddiv').html('');
+                                $(document).find('#noflash').show();
+                            }
+                        } else {
+                            if (PPTplayer.length > 0) {
+                                $('.bxslider').remove();
+                                $('<div/>').html(PPTplayer).text();
+                                $('#hiddencontentdvppt').html(dataplayer);
+                                $('#hiddencontentdvppt').find('#contentdddivppt').find('#PPTplayer')
+                                    .html($(dataplayer).find('div#pptpadding'));
+                                $('#dvDocument').html($('#hiddencontentdvppt').html());
+                                $('#hiddencontentdvppt').html("");
+                                pushInsights();
+                            } else {
+                                $('.item-column').removeClass("active");
+                                $('#' + objectId).addClass("active");
+                                if (objecttype == 4)
+                                    BindSubmissionBox();
+                                $('.title-hide').show();
+                                HideSectionLoader(objSpan, classname);
+
+                                if (prevobjectId > 0) {
+                                    document.getElementById('prevvalue').value = prevobjectId;
+                                } else {
+                                    $('.view-prev').hide();
+                                    document.getElementById('prevvalue').value = 0;
+                                }
+                                $('#dvDocument').html(data);
+                                if (objecttype == 6) {
+                                    Preview.Update();
+                                }
+
+                            }
+                        }
+
+                        $('.item-column').removeClass("active");
+                        $('#' + objectId).addClass("active");
+                        BindSubmissionBox();
+                        $('.title-hide').show();
+                        HideSectionLoader(objSpan, classname);
+
+                        if (prevobjectId > 0) {
+                            document.getElementById('prevvalue').value = prevobjectId;
+                        } else {
+                            $('.view-prev').hide();
+                            document.getElementById('prevvalue').value = 0;
+                        }
+                    },
+                    error: function(response) {
+                        enableSectionsAndSubsections();
+                        alert("Server Error");
+                    }
+                });
+            }
+
+            function SetNextId(objectId) {
+
+                var nxtId = $('#li_' + objectId).next("li").children("a").attr("id");
+                var totalSections = $("#sectionsbar").children().length;
+                var totalSubSections = $("#subsectionsbar").children().length;
+                $('.view-next').hide();
+                $('#nextvalue').val(0);
+
+
+                if (nxtId > 0) {
+                    $('.view-next').show();
+                    $('#nextvalue').val(nxtId);
+                }
+                else{
+                    if(totalSections==1 && totalSubSections==1){
+                        $('.view-next').hide();
+                    }
+                    else{
+                        $('.view-next').show();
+                    }
+                    $('.view-next').attr('onClick', 'GetNextWeek(this);');
+                }
+            }
+            function GetNextWeek(th) {
+                var interest = $('#sectionsbar').find('li.active').index();
+                var length = $('ul#sectionsbar li').length;
+                interest = interest+2;
+                var url = getNextWeekUrl(interest,length);
+                if(url==""){
+                    var link1 = $('#sectionsbar li:nth-child(1)');
+                    var element1 = link1[0].children[0].attributes.href;
+                    url = element1.value;
+                }
+                window.location = url;
+            }
+            function getNextWeekUrl(child,length){
+                var url="";
+                for (i = child; i < length+1; i++) { 
+                    var link = $('#sectionsbar li:nth-child('+i+')');
+                    var element = link[0].children[0].attributes.href;
+                    if(element!=undefined){
+                        url = element.value;
+                        return url;
+                    }
+                }
+                return url;
+            }
+
+            function SetPrevId(objectId) {
+
+                var prevId = $('#li_' + objectId).prev("li").children("a").attr("id");
+
+                $('.view-prev').hide();
+                $('#prevvalue').val(0);
+
+
+                if (prevId > 0) {
+                    $('.view-prev').show();
+                    $('#prevvalue').val(prevId);
+                }
+                //else{
+                //    $('.view-prev').show();
+                //    $('.view-prev').attr('onClick', 'GetPrevWeek(this);');
+                //}
+            }
+
+            function GetPrevWeek(th) {
+                var interest = $('#sectionsbar').find('li.active').index();
+                var length = $('ul#sectionsbar li').length;
+                interest = interest+2;
+                var url = getPrevWeekUrl(interest,length);
+                if(url==""){
+                    var link1 = $('#sectionsbar li:nth-child(1)');
+                    var element1 = link1[0].children[0].attributes.href;
+                    url = element1.value;
+                }
+                window.location = url;
+            }
+
+            function getPrevWeekUrl(child,length){
+                var url="";
+                for (i = child; i < length+1; i++) { 
+                    var link = $('#sectionsbar li:nth-child('+i+')');
+                    var element = link[0].children[0].attributes.href;
+                    if(element!=undefined){
+                        url = element.value;
+                        return url;
+                    }
+                }
+                return url;
+            }
+
+            </script>
+            <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('#' + '115139').addClass("active");
+            });
+            var IsTestStarted = 'False';
+            $('body').on('click',
+                '.objSection',
+                function() {
+
+                    if (' true' == 'false') {
+                        var SectionID = $(this).attr("id");
+                        if (IsTestStarted == 'True') {
+                            showsafetestquit('sec', SectionID);
+                        } else {
+                            switchTabsSections(SectionID);
+
+                        }
+                    }
+
+                });
+            switchTabsSections = function(SectionID) {
+
+
+                var objSpan = "";
+                objSpan = $('#' + SectionID);
+                var objHtml = objSpan.html();
+                var classname = "";
+                classname = objSpan.attr('class');
+
+                ShowSectionWeekLoader(objSpan);
+
+                $.ajax({
+                    type: "POST",
+                    url: '/courses/Bindsubsectionsbar',
+                    data: { cid: '4483', sid: SectionID, cwtype: 'SyncCourse' },
+                    dataType: "json",
+
+                    success: function(response) {
+
+                        response = JSON.parse(response);
+                        var data = response.Html;
+
+                        var dataplayer = response.dochtml;
+                        var contenthtml = response.contenthtml;
+                        var docPlayer = $(contenthtml).find('#DocPlayer');
+                        var PPTplayer = $(contenthtml).find('#PPTplayer');
+
+                        $('#dvsubsectionsbar').html(data);
+                        Preview.Update();
+                        if (docPlayer.length > 0) {
+                            $('#hiddencontentdv').html("");
+                            $('<div/>').html(docPlayer).text();
+                            $(docPlayer).find('script').text('');
+                            $('#hiddencontentdv').html(dataplayer);
+                            $('#hiddencontentdv').find('#contentdddiv')
+                                .html($(contenthtml).find('#DocPlayer').html(docPlayer.text()));
+                            $('#dvDocument').html($('#hiddencontentdv').html());
+                            if (!swfobject.hasFlashPlayerVersion("1")) {
+                                $('#dvDocument').find('#contentdddiv').html('');
+                                $(document).find('#noflash').show();
+                            }
+                        }
+
+                        if (PPTplayer.length > 0) {
+                            $('.bxslider').remove();
+                            $('<div/>').html(PPTplayer).text();
+                            $('#hiddencontentdvppt').html(dataplayer);
+                            $('#hiddencontentdvppt').find('#contentdddivppt').find('#PPTplayer')
+                                .html($(dataplayer).find('div#pptpadding'));
+                            $('#dvDocument').html($('#hiddencontentdvppt').html());
+                            $('#hiddencontentdvppt').html("");
+                            pushInsights();
+                        }
+
+                        HideSectionWeekLoader(objSpan, classname, objHtml);
+                        $('.sectionBar').removeClass("active");
+                        $('#' + SectionID).parent('.sectionBar').addClass("active");
+                        $("ul#subsectionsbar li:first").find('a').addClass("active");
+                        SetNextId($("ul#subsectionsbar li:first").find('a').attr('id'));
+                        SetPrevId($("ul#subsectionsbar li:first").find('a').attr('id'));
+
+                        $(function() {
+                            var jcarousel = $('.jcarousel');
+                            jcarousel.jcarousel();
+                        });
+
+                    },
+                    error: function() {
+                        console.log("error");
+                    },
+                });
+            }
+
+            $('body').on('click',
+                '.objClass',
+                function() {
+
+                    var objectId = $(this).attr("id");
+                    var objSpan = "";
+                    objSpan = $('#' + objectId).children("span").next('.ico');
+                    var classname = "";
+                    classname = objSpan.attr('class');
+                    ShowSectionLoader(objSpan);
+
+                    disableSectionsAndSubsections();
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/courses/BindObjectDetail',
+                        data: { cid: '4483', ot: '1', oid: objectId },
+                        dataType: "json",
+                        success: function(response) {
+                            enableSectionsAndSubsections();
+                            response = JSON.parse(response);
+                            window.responsePlayer = response.responsePlayer;
+                            HideSectionLoader(objSpan, classname);
+                            var data = response.Html;
+                            $('#dvDocument').html(data);
+                            $('.item-column').removeClass("active");
+                            $('#' + objectId).addClass("active");
+                            SetNextId(objectId);
+                            SetPrevId(objectId);
+                        },
+                        error: function() {
+                            enableSectionsAndSubsections();
+                            alert("Server Error");
+                            console.log("error");
+                        },
+                    });
+
+                });
+
+            $('body').on('click',
+                '.objAsgn',
+                function() {
+
+                    var objectId = $(this).attr("id");
+                    var objSpan = "";
+                    objSpan = $('#' + objectId).children("span").next('.ico');
+                    var classname = "";
+                    classname = objSpan.attr('class');
+                    ShowSectionLoader(objSpan);
+
+                    disableSectionsAndSubsections();
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/courses/BindObjectDetail',
+                        data: { cid: '4483', ot: '4', oid: objectId },
+                        dataType: "json",
+
+                        success: function(response) {
+                            enableSectionsAndSubsections();
+                            response = JSON.parse(response);
+                            window.responsePlayer = response.responsePlayer;
+                            HideSectionLoader(objSpan, classname);
+                            var data = response.Html;
+                            $('#dvDocument').html(data);
+
+                            $('.item-column').removeClass("active");
+                            $('#' + objectId).addClass("active");
+                            BindSubmissionBox();
+                            SetNextId(objectId);
+                            SetPrevId(objectId);
+                        },
+                        error: function() {
+                            enableSectionsAndSubsections();
+                            alert("Server Error");
+                            console.log("error");
+                        },
+                    });
+
+                });
+
+            $('body').on('click',
+                '.objReadingLst',
+                function() {
+                    var objectId = $(this).attr("id");
+                    var objSpan = "";
+                    objSpan = $('#' + objectId).children("span").next('.ico');
+                    var classname = "";
+                    classname = objSpan.attr('class');
+                    ShowSectionLoader(objSpan);
+
+                    disableSectionsAndSubsections();
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/courses/BindObjectDetail',
+                        data: { cid: '4483', ot: '5', oid: objectId },
+                        dataType: "json",
+
+                        success: function(response) {
+                            enableSectionsAndSubsections();
+                            response = JSON.parse(response);
+                            window.responsePlayer = response.responsePlayer;
+                            HideSectionLoader(objSpan, classname);
+                            var data = response.Html;
+                            $('#dvDocument').html(data);
+
+                            $('.item-column').removeClass("active");
+                            $('#' + objectId).addClass("active");
+                            BindSubmissionBox();
+                            SetNextId(objectId);
+                            SetPrevId(objectId);
+                        },
+                        error: function() {
+                            enableSectionsAndSubsections();
+                            alert("Server Error");
+                            console.log("error");
+                        },
+                    });
+
+                });
+
+            $('body').on('click',
+                '.objContent',
+                function() {
+
+                    var objectId = $(this).attr("id");
+                    var objSpan = "";
+                    objSpan = $('#' + objectId).children("span").next('.ico');
+                    var classname = "";
+                    classname = objSpan.attr('class');
+                    ShowSectionLoader(objSpan);
+
+                    disableSectionsAndSubsections();
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/courses/BindObjectDetail',
+                        data: { cid: '4483', ot: '2', oid: objectId },
+                        dataType: "json",
+
+                        success: function(response) {
+                            enableSectionsAndSubsections();
+                            response = JSON.parse(response);
+                            window.responsePlayer = response.responsePlayer;
+                            HideSectionLoader(objSpan, classname);
+                            var data = response.Html;
+                            var dataplayer = response.dochtml;
+                            var docPlayer = $(data).find('#DocPlayer');
+                            var PPTplayer = $(data).find('#PPTplayer');
+                            var test = $(data).find('#hiddencontentdvppt');
+                            if (docPlayer.length > 0) {
+                                $('#hiddencontentdv').html("");
+                                $('<div/>').html(docPlayer).text();
+                                $(docPlayer).find('script').text('');
+                                $('#hiddencontentdv').html(dataplayer);
+                                $('#hiddencontentdv').find('#contentdddiv')
+                                    .html($(data).find('#DocPlayer').html(docPlayer.text()));
+                                $('#dvDocument').html($('#hiddencontentdv').html());
+                                if (!swfobject.hasFlashPlayerVersion("1")) {
+                                    $('#dvDocument').find('#contentdddiv').html('');
+                                    $(document).find('#noflash').show();
+                                }
+                            } else {
+                                if (PPTplayer.length > 0) {
+                                    $('.bxslider').remove();
+                                    $('<div/>').html(PPTplayer).text();
+                                    $('#hiddencontentdvppt').html(dataplayer);
+                                    $('#hiddencontentdvppt').find('#contentdddivppt').find('#PPTplayer')
+                                        .html($(dataplayer).find('div#pptpadding'));
+                                    $('#dvDocument').html($('#hiddencontentdvppt').html());
+                                    $('#hiddencontentdvppt').html("");
+                                    pushInsights();
+                                } else {
+                                    $('.item-column').removeClass("active");
+                                    $('#' + objectId).addClass("active");
+                                    SetNextId(objectId);
+                                    SetPrevId(objectId);
+                                    $('#dvDocument').html(data);
+
+                                }
+                            }
+
+                            $('.item-column').removeClass("active");
+                            $('#' + objectId).addClass("active");
+                            SetNextId(objectId);
+                            SetPrevId(objectId);
+                        },
+                        error: function() {
+                            alert("Server Error");
+                            enableSectionsAndSubsections();
+                            console.log("error");
+                        },
+                    });
+
+                });
+
+
+            $('body').on('click',
+                '.objTest',
+                function() {
+
+                    var objectId = $(this).attr("id");
+                    if (IsTestStarted == true) {
+                        showsafetestquit('test', objectId);
+                    } else {
+                        switchTabstests(objectId);
+
+                    }
+
+
+                });
+
+            //Artcile ObjectType = 6
+            $('body').on('click',
+                '.objArticle',
+                function() {
+
+                    var objectId = $(this).attr("id");
+                    var objSpan = "";
+                    objSpan = $('#' + objectId).children("span").next('.ico');
+                    var classname = "";
+                    classname = objSpan.attr('class');
+                    ShowSectionLoader(objSpan);
+
+                    disableSectionsAndSubsections();
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/courses/BindObjectDetail',
+                        data: { cid: '4483', ot: '6', oid: objectId },
+                        dataType: "json",
+
+                        success: function(response) {
+                            enableSectionsAndSubsections();
+                            response = JSON.parse(response);
+                            window.responsePlayer = response.responsePlayer;
+                            HideSectionLoader(objSpan, classname);
+                            var data = response.Html;
+                            $('#dvDocument').html(data);
+                            Preview.Update();
+                            $('.item-column').removeClass("active");
+                            $('#' + objectId).addClass("active");
+                            BindSubmissionBox();
+                            SetNextId(objectId);
+                            SetPrevId(objectId);
+                        },
+                        error: function() {
+                            enableSectionsAndSubsections();
+                            alert("Server Error");
+                            console.log("error");
+                        },
+                    });
+
+                });
+            switchTabstests = function switchTabstests(objectId) {
+
+                var nextobjectId = $('#li_' + objectId).next("li").children("a").attr("id");
+                var prevobjectId = $('#li_' + objectId).prev("li").children("a").attr("id");
+                var objSpan = "";
+                objSpan = $('#' + objectId).children("span").next('.ico');
+                var classname = "";
+                classname = objSpan.attr('class');
+                ShowSectionLoader(objSpan);
+
+                disableSectionsAndSubsections();
+
+                j.ajax({
+                    type: "POST",
+                    url: '/courses/BindObjectDetail',
+                    data: { cid: '4483', ot: '3', oid: objectId },
+                    dataType: "json",
+
+                    success: function(response) {
+                        enableSectionsAndSubsections();
+                        response = JSON.parse(response);
+                        window.responsePlayer = response.responsePlayer;
+                        HideSectionLoader(objSpan, classname);
+                        var data = response.Html;
+                        $('#dvDocument').html(data);
+
+                        $('.item-column').removeClass("active");
+                        $('#' + objectId).addClass("active");
+                        $('#hdloadcmp').val('True');
+
+                        if (nextobjectId > 0) {
+                            document.getElementById('nextvalue').value = nextobjectId;
+                        } else {
+                            $('.view-next').hide();
+                            document.getElementById('nextvalue').value = 0;
+                        }
+
+                        if (prevobjectId > 0) {
+                            document.getElementById('prevvalue').value = prevobjectId;
+                        } else {
+                            $('.view-prev').hide();
+                            document.getElementById('prevvalue').value = 0;
+                        }
+                    },
+                    error: function() {
+                        enableSectionsAndSubsections();
+                        alert("Server Error");
+                        console.log("error");
+                    },
+                });
+            };
+
+            </script>
+            <script type="text/javascript">
+
+            if ($('#sectionsbar li').length < 8) {
+
+                $('.tab-prev').hide();
+
+                $('.tab-next').hide();
+            }
+
+            </script>
+
+
+            <script type="text/javascript">
+            function openDetail(launchurl) {
+                window.open(launchurl,
+                    'listWindow',
+                    "left=0,top=0,resize=0, height=" + screen.height + ", width=" + screen.width);
+            }
+
+            (function($) {
+                $(function() {
+                    var jcarousel = $('.jcarousel');
+
+                    jcarousel
+                        .on('jcarousel:reload jcarousel:create',
+                            function() {
+                                var width = jcarousel.innerWidth();
+
+                                if (width >= 600) {
+                                    width = width / 7;
+                                } else if (width >= 350) {
+                                    width = width / 2;
+                                }
+
+
+                                //jcarousel.jcarousel('items').css('width', width + 'px');
+                            })
+                        .jcarousel({
+                            wrap: 'null',
+                            animation: 'fast'
+                        });
+
+                    var index = $('#li_115139').index();
+                    var jcarousel2 = $('.jcarousel2');
+                    jQuery(jcarousel2).jcarousel('scroll', index);
+                    var indexli = $('#12106').parent("li").index();
+                    //jQuery(jcarousel).jcarousel('scroll', indexli);
+
+                    $('.tab-prev')
+                        .jcarouselControl({
+                            target: '-=1'
+                        });
+
+                    $('.tab-next')
+                        .jcarouselControl({
+                            target: '+=1'
+                        });
+
+
+                    $('.jcarousel-pagination')
+                        .on('jcarouselpagination:active',
+                            'a',
+                            function() {
+                                $(this).addClass('active');
+                            })
+                        .on('jcarouselpagination:inactive',
+                            'a',
+                            function() {
+                                $(this).removeClass('active');
+                            })
+                        .on('click',
+                            function(e) {
+                                e.preventDefault();
+                            })
+                        .jcarouselPagination({
+                            perPage: 1,
+                            item: function(page) {
+                                return '<a href="#' + page + '">' + page + '</a>';
+                            }
+                        });
+                });
+                var length = $('.sectionBar.item').length;
+                var currentItem = $('.sectionBar.item.active').index();
+
+
+                if (length <= 7) {
+                    $('.tab-prev').addClass('disable');
+                    $('.tab-next').addClass('disable');
+                } else if (currentItem == 0) {
+                    $('.tab-prev').addClass('disable');
+                } else if (currentItem > (length - 7)) {
+                    $('.tab-next').addClass('disable');
+                }
+
+                $('.tab-next, .tab-prev').on('click',
+                    function() {
+                        if (length > 7) {
+                            if (typeof lastItem == 'undefined') {
+                                if (length > (currentItem + 7))
+                                    lastItem = currentItem + 7;
+                                else
+                                    lastItem = length;
+                            }
+                            if ($(this).attr('class').indexOf("tab-next") > -1) {
+                                lastItem++;
+                            } else {
+                                lastItem--;
+                            }
+                            if (lastItem < 7)
+                                lastItem = 7;
+                            if (lastItem > length)
+                                lastItem = length;
+                            if (lastItem >= length)
+                                $('.tab-next').addClass('disable');
+                            else {
+                                $('.tab-next').removeClass('disable');
+                                if (lastItem > 7)
+                                    $('.tab-prev').removeClass('disable');
+                                else
+                                    $('.tab-prev').addClass('disable');
+                            }
+
+                        }
+                    });
+            })(jQuery);
+
+            </script>
+
+            <div id="dvAsgnScript">
+
+                <script type="text/javascript">
+            function isExtAllowed(filename) {
+                var allowedExt = [
+                    'ppt',
+                    'pptx',
+                    'xls',
+                    'xlsx',
+                    'doc',
+                    'docx',
+                    'rtf',
+                    'pdf',
+                    'swf'
+                ];
+
+                try {
+                    var filenameParts = filename.split('.');
+                    var ext = filenameParts[filenameParts.length - 1];
+
+                    if (allowedExt.indexOf(ext) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } catch (ex) {
+                    console.log(ex);
+                    return false;
+                }
+            }
+
+            function uploadFile_new() {
+
+                var formData = new FormData();
+                formData.append("FileUpload", document.getElementById('fileUpldContent').files[0]);
+                formData.append("timeZone", '');
+
+                var url =
+                    '/courses/4483-research-writing/assignmentsubmissionfileuploadhandler';
+
+                //var url =
+                //    'https://multipartupload.swayam.gov.in/upload/AssignmentSubmissionFileUploadHandler?hv=1&timeZone=33';
+
+
+                $.ajax({
+                    url: url,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    type: 'POST',
+                    success: function(data){
+                        alert(data);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+
+            }
+
+
+            function uploadFile() {
+
+                var inputFilename = document.getElementById('fileUpldContent').files[0];
+                if (! isExtAllowed(inputFilename.name)) {
+                    alert("File type not supported");
+                    document.getElementById('fileUpldContent').value = null;
+                    return false;
+                }
+
+                if (inputFilename.size > 52428800) {
+                    alert("Maximum file size allowed is 50 MB");
+                    document.getElementById('fileUpldContent').value = null;
+                    return false;
+                }
+                var fd = new FormData();
+                var count = $('#ObjCount').val();
+                var exContentId = $('#hdnContentIds').val();
+                var dvID = "dv_" + $('#inptLastCId').val();
+                fd.append("FileUpload", document.getElementById('fileUpldContent').files[0]);
+                fd.append("timeZone", '');
+                var xhr = new XMLHttpRequest();
+                xhr.upload.addEventListener('progress', uploadProgress, false);
+                xhr.onreadystatechange = stateChange;
+                var url =
+                    'https://multipartupload.swayam.gov.in/Assignment/Action/OA/FileUpload.aspx/SubmissionUpload?hv=1&timeZone=33';
+
+                
+
+                xhr.open('POST', url, true);
+                xhr.withCredentials = true;
+                xhr.send(fd);
+                xhr.onload = function(e) {
+
+                    var response = e.target.response;
+                    var parser = new DOMParser();
+                    var dom = parser.parseFromString(response, "text/xml");
+                    var Cid = $(response).children(".Browselist").children("#hdcId").val();
+                    var html1 = $(dom).find('#hdId').val();
+                    $('#dvBrowse').show();
+                    $('#ObjCount').after(response).slideDown(3000);
+                    var cid = $('#ObjCount').next('.Browselist').children('.hdcId').val();
+                    if (cid > 0) {
+                        count = parseInt(count) + 1;
+                        $('#ObjCount').val(count);
+                        if (exContentId != "") {
+                            document.getElementById('hdnContentIds').value = exContentId + "," + cid;
+                        } else {
+                            $('#hdnContentIds').val(cid);
+                        }
+                    }
+
+                };
+            }
+
+            function uploadProgress(event) {
+                var percent = parseInt(event.loaded / event.total * 100);
+                $('#attach_link').css('margin', '4px 5px');
+                $('#attach_link').text('Uploading: ' + percent + '%');
+                if (percent == 100) {
+                    $('#attach_link').text('Processing');
+                }
+                $('#UploadFile').show();
+                $('#spBrowse').hide();
+
+            }
+
+            function stateChange(event) {
+                if (event.target.readyState == 4) {
+                    if (event.target.status == 200 || event.target.status == 304) {
+                        $('#attach_link').text('');
+                        $('#UploadFile').hide();
+                        $('#spBrowse').show();
+
+                    }
+
+                }
+            }
+
+                AddAntiForgeryToken = function (data) {
+                    data.__RequestVerificationToken = jQuery('#__AjaxAntiForgeryForm input[name=__RequestVerificationToken]').val();
+                    return data;
+                };
+                function SubmitAssignment(asgnId) {
+                    $('.submitEnabled').css('display' , 'none');
+                    $('.submitDisabled').css('display' , 'block');
+                    var count = $('#ObjCount').val();
+                    var submissionMsg = $('#txtSubmisionMessage').val().trim().toString();
+                    var contentIds = $('#hdnContentIds').val();
+
+                var descVal = encodeURI(submissionMsg).replace(/\r\n|\n|\r/g, '<br />');
+
+                var isValidLength = true;
+
+                if (submissionMsg.length < 1) {
+                    isValidLength = false;
+                }
+
+                if (ValidateSubmission()) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/Courses/SubmitAsgn',
+                        data: {
+                            oc: count,
+                            od: contentIds,
+                            aid: asgnId,
+                            msg: descVal,
+                            subP: '1',
+                            domainUrl: 'https://swayam.gov.in',
+                        },
+                        dataType: "json",
+                        error: function(err) {
+                            console.log("error" + err);
+                        },
+                        //xhrFields: {
+                        // withCredentials: true
+                        //},
+                        complete: function() {
+                            location.reload();
+                            
+                        }
+                    });
+                } else {
+                    $('.submitEnabled').css('display', 'block');
+                    $('.submitDisabled').css('display', 'none');
+                }
+
+            }
+
+            $('.submitEnabled').show();
+            $('.submitDisabled').hide();
+
+            function OpenFileBrowseDialog() {
+                $('#fileUpldContent').click();
+            }
+
+            function ValidateSubmission() {
+                var count = $('#ObjCount').val();
+                var descVal = $('#txtSubmisionMessage').val().trim()
+                    .replace(/\r\n|\n|\r|\t|\s/g, ''); //$('#redactor_toolbar_0').siblings('div').html().length;
+                descVal = descVal.replace(/&nbsp;/g, '').replace("<p></p>", "");
+                var msgLength = descVal.length;
+                //$('.cleditorMain').children('iframe').contents().find('body').html().length;
+
+                var isValid = false;
+
+                if (count > 0) {
+                    isValid = true;
+                }
+
+                if (msgLength > 0) {
+                    if (descVal != undefined || descVal != "" || descVal != "<p>​</p>") {
+                        isValid = true
+                    }
+                }
+
+                if (!isValid) {
+                    alert('Please enter message or(and) upload files to submit assignment.');
+                }
+
+                return isValid;
+            }
+
+            function CancelSubmission(asgnId) {
+                var count = $('#ObjCount').val();
+                var descVal = $('#txtSubmisionMessage').val().trim();
+
+                var msgLength = $('#txtSubmisionMessage').val().length;
+
+                var isValid = false;
+                if (count > 0) {
+                    isValid = true;
+                }
+                if (msgLength > 0) {
+                    if (descVal != undefined || descVal != "" || descVal != "<p>​</p>") {
+                        isValid = true
+                    }
+                }
+                if (isValid) {
+                    var objectId = asgnId;
+                    if (asgnId > 0) {
+                        disableSectionsAndSubsections();
+                        window.location.reload();
+
+                    }
+                }
+            }
+
+            function doAjaxCallFordownloadObject(assignmentId, contentId, submissionId) {
+
+                $.ajax({
+                    url:
+                        '/courses/4483-research-writing/getcontentdownloadurl',
+                    type: 'POST',
+                    data: {
+                        aId: assignmentId,
+                        cId: contentId,
+                        sId: submissionId
+                    },
+                    success: function(response) {
+                        if (response.downloadUrl)
+                            window.location = response.downloadUrl;
+                    },
+                    error: function() {
+                        alert('There was some error downloading the assignment file');
+                    }
+                });
+            }
+
+            function DeleteObject(contentID) {
+                $('.Browselist_' + contentID).hide();
+                var count = $('#ObjCount').val();
+                var exContentId = $('#hdnContentIds').val();
+                var Object_Delete_Url = '/Assignment/Action/deleteobject.aspx';
+                var Objectid = $('.Browselist_' + contentID).children('.hdcId').val();
+
+                if (Objectid != undefined) {
+                    if (exContentId != "") {
+                        count = parseInt(count) - 1;
+                        $('#ObjCount').val(count);
+
+                        if (parseInt(exContentId.indexOf(Objectid + ",")) > -1) {
+                            document.getElementById('hdnContentIds').value = exContentId.replace(Objectid + ",", "");
+                        } else {
+                            exContentId = exContentId.replace(Objectid, "");
+                            var exCourseIdLen = parseInt(exContentId.length);
+                            if (exContentId.substring(exCourseIdLen, exCourseIdLen - 1) == ",") {
+                                exContentId = exContentId.substring(0, exCourseIdLen - 1);
+                            }
+                            document.getElementById('hdnContentIds').value = exContentId;
+                            document.getElementById('fileUpldContent').value = null;
+                        }
+
+                    }
+                }
+            }
+
+            $(document).ready(function() {
+                $('#ObjCount').val('0');
+                $('#hdnContentIds').val('');
+                $('#txtSubmisionMessage').val('');
+            });
+
+            function SetIframeSource(url) {
+                var contentId = parseInt(url.split("ContentID=")[1].split("-")[0]);
+                $.ajax({
+                    type: 'GET',
+                    url:
+                        '/courses/4483-research-writing/getcontentpopupmeta',
+                    data: { contentId: contentId },
+                    async: false,
+                    success: function(result) {
+                        if (!isNaN(result.height)) {
+                            $('#ifrAsgnContent').css("height", result.height);
+                        } else {
+                            $('#ifrAsgnContent').css("height", 560);
+                        }
+                    }
+                });
+                $('#ifrAsgnContent').attr('src', url);
+                $('#dv_AsgnContent').modal('show');
+            }
+                </script>
+
+            </div>
+
+            <div id="dvTestScript">
+                <script type="text/javascript">
+            var attemptIdVal;
+            var redirectUrl;
+
+            function loadComplete() {
+
+                var tid = $('#hdnTestId').val();
+                if ($('#hdloadcmp').val() == 'True') {
+                    $.ajax({
+                        type: "POST",
+                        url: "/courses/GetAttemptId",
+                        data: { _userID: '170952', _testId: tid },
+                        dataType: "json",
+                        success: function(response) {
+                            response = JSON.parse(response);
+                            var data = response.Html;
+                            if (data != "") {
+                                attemptIdVal = data;
+                                $('#hdAttemptId').val(attemptIdVal);
+                                SendAttemptIdtoPlayer();
+                            }
+                        }
+                    });
+                }
+            }
+
+            function getMovieElm() {
+                return document.getElementById('TestPlayer');
+            }
+
+            function SendAttemptIdtoPlayer() {
+                getMovieElm().sendAttemptid(attemptIdVal);
+            }
+
+            showlearnosityloader = function showlearnosityloader() {
+                $("#learnosityloader").show();
+                $("#learnosityloader-mask").show();
+            }
+            hidelearnosityloader = function hidelearnosityloader() {
+                $("#learnosityloader").hide();
+                $("#learnosityloader-mask").hide();
+            }
+            CallScorePageNetwork = function(atId, testId) {
+                $('#hdAttemptId').val(atId);
+                $('#hdnTestId').val(testId);
+                showlearnosityloader();
+                submitTest();
+            }
+
+            submitTest = function submitTest() {
+                IsTestStarted = "false";
+                var attemptid = $('#hdAttemptId').val();
+                var tid = $('#hdnTestId').val();
+                showlearnosityloader();
+                j.ajax({
+                    type: "POST",
+                    url: '/courses/BindTestScore',
+                    data: { uid: '170952', testid: tid, atid: attemptid, courseId: 4483 },
+                    dataType: "json",
+                    success: function(response) {
+                        response = JSON.parse(response);
+                        var data = response.Html;
+                        $('.attemptMain').html(data);
+                        hidelearnosityloader();
+                        InitializeScorePage();
+                        BindAttemptDropDownChange();
+                        $('#loadingProgress').hide();
+
+                    },
+                    error: function() {
+                        hidelearnosityloader();
+                        console.log("error");
+                        $('#loadingProgress').hide();
+                    },
+                });
+            }
+
+            function reviewdone() {
+
+                var attemptid = $('#hdAttemptId').val();
+                var tid = $('#hdnTestId').val();
+
+                j.ajax({
+                    type: "POST",
+                    url: '/courses/BindTestScore',
+                    data: { uid: '170952', testid: tid, atid: attemptid, courseId: 4483 },
+                    dataType: "json",
+                    success: function(response) {
+                        response = JSON.parse(response);
+                        var data = response.Html;
+                        $('.attemptMain').html(data);
+                        InitializeScorePage();
+                        BindAttemptDropDownChange();
+
+                    },
+                    error: function() {
+                        console.log("error");
+                    },
+                });
+
+            }
+
+            $('body').on('click',
+                '.startTestBtn',
+                function() {
+                    var objectId = $(this).attr("id").split("_")[1];
+                    $('#hdnTestId').val(objectId);
+
+                    var selectedSectionid = $("#sectionsbar li.sectionBar.active > a").attr("id");
+                    var objectVersion = $(this).attr("data-version");
+                    console.log(objectVersion);
+                    j.ajax({
+                        type: "POST",
+                        url: '/courses/BindTestAttemptPlayer',
+                        data: { cid: '4483', ot: '3', oid: objectId },
+                        dataType: "json",
+
+                        success: function(response) {
+                            response = JSON.parse(response);
+                            var data = response.Html;
+                            $('.attemptMain').html(data);
+                            IsTestStarted = true;
+                            if (!swfobject.hasFlashPlayerVersion("1")) {
+                                // $('.attemptMain').html('');
+                                $(document).find('#noflash').show();
+                            }
+                        },
+                        error: function() {
+                            console.log("error");
+                        },
+                    });
+                });
+
+            $('body').on('click',
+                '#reattempt',
+                function() {
+
+                    var objectId = $('#hdfTestId').val();
+                    $('#hdloadcmp').val('True');
+                    var objectVersion = $(this).attr("data-version");
+                    var selectedSectionid = $("#sectionsbar li.sectionBar.active > a").attr("id");
+                    // added for Learnosity -- bellurbis
+                    j.ajax({
+                        type: "POST",
+                        url: '/courses/BindTestAttemptPlayer',
+                        data: { cid: '4483', ot: '3', oid: objectId },
+                        dataType: "json",
+
+                        success: function(response) {
+                            response = JSON.parse(response);
+                            var data = response.Html;
+                            $('.attemptMain').html(data);
+                        },
+                        error: function() {
+                            console.log("error");
+                        },
+                    });
+                });
+
+            $('body').on('click',
+                '#review',
+                function() {
+                    var attemptcnt = $('#drpAttemptInfo :selected').text().substring(8);
+                    var objectVersion = $(this).attr("data-version");
+                    $('#hdAttemptCnt').val(attemptcnt);
+                    var objectId = $('#hdfTestId').val();
+
+                    $('#hdAttemptId').val($('#hdfAttemptId').val());
+                    var AttmptID = $('#hdAttemptId').val();
+                    $('#hdloadcmp').val('false');
+                    j.ajax({
+                        type: "POST",
+                        url: '/courses/BindTestReviewPlayer',
+                        data: { cid: '4483', ot: '3', oid: objectId, atcnt: attemptcnt },
+                        dataType: "json",
+                        success: function(response) {
+                            response = JSON.parse(response);
+                            var data = response.Html;
+                            $('.attemptMain').html(data);
+                        },
+                        error: function() {
+                            console.log("error");
+                        },
+                    });
+                });
+
+            $(document).on('click',
+                '#ancReturnToSchedule,.main_nav,.catalog,.mystuff,.aboutUs,.benefits,.contactUs,.mobApps,.help,.termsOfUse,.privacyPolicy,.rti',
+                function(e) {
+                    e.preventDefault();
+                    var redirectUrl = $(this).attr("href");
+                    if (IsTestStarted == true) {
+                        showsafetestquit('redirect', redirectUrl);
+                    } else {
+                        window.location.href = redirectUrl;
+                    }
+                });
+
+
+            function BindAttemptDropDownChange() {
+                IsTestStarted = "false";
+                $('#drpAttemptInfo').change(function() {
+                    var attemptid = $(this).val();
+                    var tid = $('#hdnTestId').val();
+
+                    j.ajax({
+                        type: "POST",
+                        url: '/courses/BindTestScore',
+                        data: { uid: '170952', testid: tid, atid: attemptid, courseId: 4483 },
+                        dataType: "json",
+                        success: function(response) {
+                            response = JSON.parse(response);
+                            var data = response.Html;
+                            $('.attemptMain').html(data);
+                            InitializeScorePage();
+                            BindAttemptDropDownChange();
+                            var attemptcnt = $('#drpAttemptInfo :selected').text().substring(8);
+                            $('#hdAttemptCnt').val(attemptcnt);
+                        },
+                        error: function() {
+                            console.log("error");
+                        },
+                    });
+                });
+            }
+                </script>
+                <script type="text/javascript">
+
+            window.responsePlayer = {"cid":115139,"cpid":4483,"ccp":"","vt":1,"vid":170952,"oid":1633142,"ct":8,"hn":"swayam.gov.in","ts":0,"vip":"10.10.9.4:21810"};
+
+            function getPresentationStatus() {
+                var contentData = JSON.stringify(window.responsePlayer);
+                return contentData.toString();
+            }
+                </script>
+            </div>
+        
+
+</body>
+</html>

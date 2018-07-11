@@ -1,0 +1,116 @@
+
+.custom-table > tbody > tr > td {
+	padding: 1px;
+	alignment: left;
+}
+.header_row >th {
+	background:#438eb9;
+	color:#fff;
+	padding: 5px;
+}
+.footer_row >td {
+	background:lightgrey;
+	color:#000;
+	padding: 5px;
+}
+.white-table {
+	background: white;
+}
+.close-icn {
+	padding: 0px 10px;
+	font-size: 20px;
+	color: red;
+}
+.row-height {
+	font-size: 13px;
+	height: 25px;
+	padding: 0 0 0 10px;
+}
+.less-padding {
+	padding-right: 0px;
+	padding-left: 8px;
+}
+.align-right {
+	text-align: right;
+}
+.bolder {
+	font-weight: bold;
+}
+.readonly {
+	background-color: #ffffff !important;
+}
+.font15 {
+	font-size: 15px;
+}
+.form-control {
+	width: calc() !important;
+}
+.red {
+	color: red;
+}
+.table-header > tr > td {
+	padding: 3px !important;
+	background-color: #438eb9;
+	font-weight: bold;
+	color: #ffffff;
+}
+.modal-extra-large
+{
+    width: 85%;
+	margin: 30px auto;
+	position: relative;
+	max-height: 80% !important;
+	overflow-y: auto !important;
+    /*margin-top: -300px !important;
+    margin-left:  -350px !important; */
+}
+
+.modal-large
+{
+    width: 85%;
+	margin: 30px auto;
+	position: relative;
+}
+
+.myModal .modal-body {
+    max-height: 525px;
+}
+
+.processed {
+	color: blue;
+}
+
+.new-row >td {
+	background-color: lightgrey;
+}
+.new-row1 >td {
+	background-color: #5fa8dc;
+}
+
+.not-included >td {
+	background-color: powderblue;
+}
+
+.popup-content {
+	height:600px;
+	overflow-y: auto !important;
+}
+.input_td_bold {
+	font-weight: bold;
+}
+
+.text-input-100 {
+	width:100px;
+}
+.text-input-150 {
+	width:150px;
+}
+.text-input-200 {
+	width:200px;
+}
+.text-input-250 {
+	width:250px;
+}
+.text-input-300 {
+	width:300px;
+}
